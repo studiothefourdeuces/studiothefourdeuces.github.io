@@ -14,7 +14,16 @@ body {
 
 /* Base text styling for the form */
 .tattoo-form input,
-.tattoo-form textarea,
+.tattoo-form textarea {
+font-family: 'DM Sans', sans-serif;
+    font-weight: thin;
+    font-size: 1rem !important;
+    font-style: normal;
+    line-height: 140%;
+    letter-spacing: -0.004em;
+    border-radius: 2px;
+}
+
 .tattoo-form button,
 .tattoo-form label,
 .tattoo-form .step-title {
