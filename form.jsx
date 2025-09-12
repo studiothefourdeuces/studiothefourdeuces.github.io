@@ -132,7 +132,7 @@ function TattooBookingForm() {
     const progress = (step / 4) * 100;
 
     const inputBase =
-        "p-4 w-full rounded-lg bg-gray-100 border border-transparent focus:outline-none placeholder:text-black/30 font-sans font-thin text-sm sm:text-base md:text-lg leading-relaxed";
+        "p-4 w-full rounded-lg bg-gray-100 border border-transparent focus:outline-none placeholder:text-black/30 font-sans font-thin text-base md:text-lg leading-relaxed";
 
     const stepTitleBase = "text-6xl sm:text-8xl md:text-8xl font-extrabold mb-6";
 
