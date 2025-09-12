@@ -152,12 +152,7 @@ function TattooBookingForm() {
     return (
         <div className="tattoo-form flex flex-col min-h-screen font-sans">
             {/* Full-width heading */}
-            <div className="relative w-full h-[150px] mb-6 px-[3.5vw]">
-                <h1 className="font-extrabold opacity-5 pointer-events-none select-none
-                 text-[14.5vw] sm:text-[7vw] md:text-[10vw] leading-[1]">
-                    Book <span className="block sm:inline">Experience</span>
-                </h1>
-            </div>
+            <div className="page-title">Book Experience</div>
 
             {/* Progress bar */}
             <div className="w-full bg-gray-200 h-0.5">

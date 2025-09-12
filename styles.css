@@ -92,6 +92,31 @@ body {
     }
 }
 
+/* Page title */
+.page-title {
+    font-weight: 900;
+    opacity: 0.1;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    line-height: 1;
+
+    /* Mobile */
+    font-size: 4rem;
+    text-align: left;
+
+    /* Tablet */
+    @media (min-width: 640px) {
+        font-size: 4rem;
+        text-align: left;
+    }
+
+    /* Desktop */
+    @media (min-width: 1024px) {
+        font-size: 10rem;
+        text-align: center;
+    }
+}
+
 /* Primary body part & specific area buttons */
 .tattoo-form .option-btn {
     text-align: center;
