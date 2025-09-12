@@ -1,0 +1,128 @@
+/* Body */
+body {
+    background-color: #f9f8f6;
+    font-family: 'DM Sans', sans-serif;
+    text-transform: uppercase !important;
+    color: #323232;
+    font-size: clamp(12px, 1.1vw, 18px);
+
+}
+
+.text-fluid {
+  font-size: clamp(12px, 1.1vw, 18px);
+}
+
+/* Base text styling for the form */
+.tattoo-form input,
+.tattoo-form textarea,
+.tattoo-form button,
+.tattoo-form label,
+.tattoo-form .step-title {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: thin;
+    font-size: 0.9rem !important;
+    font-style: normal;
+    line-height: 140%;
+    letter-spacing: -0.004em;
+    border-radius: 2px;
+}
+
+/* Putton styling */
+.tattoo-form button {
+    background-color: #f0efed;
+}
+
+.tattoo-form button:hover {
+    background-color: #ebebeb;
+}
+
+.tattoo-form button.no-bg {
+    background-color: transparent;
+}
+
+.tattoo-form input,
+.tattoo-form textarea {
+    background-color: #f0efed;
+}
+
+/* Placeholder styling */
+.tattoo-form input::placeholder,
+.tattoo-form textarea::placeholder {
+    opacity: 1;
+    font-weight: 400;
+}
+
+/* Step labels */
+.form-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 300;
+    line-height: 140%;
+}
+
+/* Add this to styles.css */
+.tattoo-form label.upload-btn {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 6rem;
+    background-color: #f0efed;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+/* Step title */
+.step-title {
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+    text-align: left;
+
+    /* Mobile */
+    font-size: 1.75rem; /* ~28px */
+
+    /* Tablet */
+    @media (min-width: 640px) {
+        font-size: 2.25rem; /* ~36px */
+    }
+
+    /* Desktop */
+    @media (min-width: 1024px) {
+        font-size: 3rem; /* ~48px */
+    }
+}
+
+/* Primary body part & specific area buttons */
+.tattoo-form .option-btn {
+    text-align: center;
+}
+
+/* Full width inputs for size/style */
+.tattoo-form .full-width-input {
+    width: 100%;
+}
+
+.error-text {
+    color: #ff6600;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+    font-weight: 100;
+}
+
+@media (min-width: 640px) {
+    .tattoo-form input,
+    .tattoo-form textarea,
+    .tattoo-form button,
+    .tattoo-form label {
+        font-size: 1rem; /* text-base */
+    }
+}
+
+@media (min-width: 768px) {
+    .tattoo-form input,
+    .tattoo-form textarea,
+    .tattoo-form button,
+    .tattoo-form label {
+        font-size: 1.125rem; /* text-lg */
+    }
+}
