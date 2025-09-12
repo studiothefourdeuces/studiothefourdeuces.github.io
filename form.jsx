@@ -510,7 +510,7 @@ function TattooBookingForm() {
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-6">
                                     {/* Pregnant/Breastfeeding */}
                                     <div>
-                                        <label className={labelBase}>Are you pregnant or breastfeeding?<span className="text-orange-500"> *</span></label>
+                                        <label className={labelBase}>Are you pregnant/breastfeeding?<span className="text-orange-500"> *</span></label>
                                         <div className="flex gap-4">
                                             {["Yes", "No"].map((opt) => {
                                                 const sel = formData.pregnant === opt;
