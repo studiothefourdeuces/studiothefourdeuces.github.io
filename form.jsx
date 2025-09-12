@@ -1,4 +1,6 @@
 const { useState } = React;
+import { motion, AnimatePresence } from "framer-motion";
+
 
 function TattooBookingForm() {
     const [step, setStep] = useState(1);
@@ -170,6 +172,8 @@ function TattooBookingForm() {
                 {/* Right: Step content */}
                 <div className="w-full md:w-1/2 p-8 sm:p-6 md:p-8">
                     <div className="w-full p-4">
+                        <AnimatePresence mode="wait">
+                        {/* STEP 1 */}
                         {step === 1 && (
                             <div className="grid grid-cols-1 gap-6">
                                 <div className={`${stepTitleBase} text-left`}>{stepTitles[step]}</div>
@@ -252,6 +256,7 @@ function TattooBookingForm() {
                             </div>
                         )}
 
+                        {/* STEP 2 */}
                         {step === 2 && (
                             <div className="grid grid-cols-1 gap-6">
                                 <div className={`${stepTitleBase} text-left`}>{stepTitles[step]}</div>
@@ -373,6 +378,7 @@ function TattooBookingForm() {
                             </div>
                         )}
 
+                        {/* STEP 3 */}
                         {step === 3 && (
                             <div>
                                 <div className="mb-4">
@@ -570,6 +576,7 @@ function TattooBookingForm() {
                                 </div>
                             </div>
                         )}
+                        </AnimatePresence>
                     </div>
                 </div>
             </div>
