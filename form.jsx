@@ -570,7 +570,7 @@ function TattooBookingForm() {
                                         }}
                                         className={`${ctaBtn} no-bg`}
                                     >
-                                        Schedule Appointment
+                                        Schedule
                                     </button>
                                 </div>
                             </div>
