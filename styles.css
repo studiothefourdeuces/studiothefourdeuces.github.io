@@ -160,3 +160,46 @@ font-family: 'DM Sans', sans-serif;
         font-size: 1.125rem; /* text-lg */
     }
 }
+
+/* --- Step transition styles --- */
+.step-panels {
+  position: relative;
+  overflow: hidden;
+  transition: height 320ms ease;
+}
+
+/* Each panel sits on top of each other; we animate transform + opacity */
+.step-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transform: translateX(20px);
+  transition: transform 360ms cubic-bezier(.22,.9,.3,1), opacity 260ms ease;
+  pointer-events: none;
+}
+
+/* Visible panel */
+.step-panel.active {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+  z-index: 2;
+}
+
+/* Panels that are before the active (we slide them left) */
+.step-panel.left {
+  transform: translateX(-20px);
+}
+
+/* Panels that are after the active (we slide them right) */
+.step-panel.right {
+  transform: translateX(20px);
+}
+
+/* Accessibility: hide inactive panels from screen readers */
+.step-panel[aria-hidden="true"] {
+  pointer-events: none;
+  visibility: visible; /* remain visible for measurement; opacity handles display */
+}
