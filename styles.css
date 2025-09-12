@@ -1,11 +1,10 @@
 /* Body */
 body {
-    background-color: #f9f8f6;
+    background-color: #f9f8f6 !important;
     font-family: 'DM Sans', sans-serif;
     text-transform: uppercase !important;
     color: #323232;
     font-size: clamp(12px, 1.1vw, 18px);
-
 }
 
 .text-fluid {
@@ -26,7 +25,8 @@ font-family: 'DM Sans', sans-serif;
 
 .tattoo-form button,
 .tattoo-form label,
-.tattoo-form .step-title {
+.tattoo-form .step-title,
+.instagram-btn {
     font-family: 'DM Sans', sans-serif;
     font-weight: thin;
     font-size: 0.9rem !important;
@@ -43,6 +43,29 @@ font-family: 'DM Sans', sans-serif;
 
 .tattoo-form button:hover {
     background-color: #ebebeb;
+}
+
+/* Artist button */
+.artist-button,
+.instagram-button {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: #323232;
+    background-color: #f0efed;
+    padding: 0.5rem 1rem;
+    border: 1px solid transparent;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.instagram-button {
+    cursor: pointer;
+}
+
+.instagram-button:hover {
+    background-color: #ebebeb;
+    border-color: #323232;
 }
 
 .tattoo-form button.no-bg {
@@ -86,6 +109,7 @@ font-family: 'DM Sans', sans-serif;
     font-weight: 900;
     margin-bottom: 1.5rem;
     text-align: left;
+    line-height: 1;
 
     /* Mobile */
     font-size: 1.75rem; /* ~28px */
@@ -202,4 +226,34 @@ font-family: 'DM Sans', sans-serif;
 .step-panel[aria-hidden="true"] {
   pointer-events: none;
   visibility: visible; /* remain visible for measurement; opacity handles display */
+}
+
+.artist-card {
+    border: 1px solid rgb(29, 29, 29);
+    padding: 1rem;
+    border-radius: 2px;
+}
+
+/* Image hover effect */
+.artist-image-wrapper {
+  overflow: hidden;
+}
+
+.artist-image {
+  transition: transform 0.3s ease, filter 0.3s ease;
+  border-radius: 2px;
+}
+
+.artist-image-wrapper:hover .artist-image {
+  transform: scale(1.05);
+  filter: brightness(0.9);
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }

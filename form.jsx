@@ -575,8 +575,6 @@ function TattooBookingForm() {
   /* ------------------- MAIN RENDER ------------------- */
   return (
     <div className="tattoo-form flex flex-col min-h-screen font-sans">
-      <div className="page-title">Book Experience</div>
-
       <div className="w-full bg-gray-200 h-0.5">
         <div style={{ width: `${progress}%` }} className="h-0.5 bg-orange-500 transition-all duration-300" />
       </div>
