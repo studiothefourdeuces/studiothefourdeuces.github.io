@@ -23,7 +23,7 @@ function TattooBookingForm() {
     });
 
     const stepTitles = {
-        1: "Tell Us About You",
+        1: "Request A Tattoo",
         2: "What's Your Idea",
         3: "Where Do You Want It",
         4: "Contact Details",
@@ -141,7 +141,7 @@ function TattooBookingForm() {
 
     const StepOne = () => (
         <div className="grid grid-cols-1 gap-6">
-            <div className={`${stepTitleBase} text-left`}>Tell Us About You</div>
+            <div className={`${stepTitleBase} text-left`}>{stepTitles[1]}</div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-6">
                 <div>
                     <label className={labelBase}>
