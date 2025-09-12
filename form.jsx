@@ -17,67 +17,17 @@ function TattooBookingForm() {
     skinConditionDetails: "",
     is18: "",
     pregnant: "",
-    agreeTerms: false,
-    confirmInfo: false,
+    gender: "",       
+    agreeTerms: "",
+    confirmInfo: "",
   });
-
-  // (keep your validation, handleChange, optionBtn etc.)
-  // For brevity I'm reusing your original helpers and constants:
-  const stepTitles = {
-    1: "Tell Us About You",
-    2: "What's Your Idea",
-    3: "Where Do You Want It",
-    4: "Contact Details",
-  };
-
-  const bodyPartOptions = {
-    Arm: [
-      { label: "Full Arm Sleeve", sessions: "5 sessions" },
-      { label: "Forearm Outside", sessions: "1 session" },
-      { label: "Forearm Inside", sessions: "1 session" },
-      { label: "Inner Upper Arm", sessions: "1 session" },
-      { label: "Outer Upper Arm", sessions: "1 session" },
-      { label: "Hand", sessions: "½ session" },
-    ],
-    Back: [
-      { label: "Full Back", sessions: "5-7 sessions" },
-      { label: "Upper or Lower Side", sessions: "3 sessions" },
-      { label: "Right or Left Side", sessions: "3 sessions" },
-    ],
-    Chest: [
-      { label: "Full Chest", sessions: "2-3 sessions" },
-      { label: "Right or Left Side", sessions: "1 session" },
-      { label: "Upper Side", sessions: "1 session" },
-      { label: "Lower Side", sessions: "1 session" },
-    ],
-    Neck: [
-      { label: "Full Neck", sessions: "2 sessions" },
-      { label: "Right or Left Side", sessions: "1 session" },
-    ],
-    Torso: [
-      { label: "Full Front Torso", sessions: "6 sessions" },
-      { label: "Right or Left Side", sessions: "2 sessions" },
-    ],
-    Leg: [
-      { label: "Full Leg", sessions: "7-8 sessions" },
-      { label: "Full Lower Leg", sessions: "3 sessions" },
-      { label: "Shin (Front)", sessions: "½ session" },
-      { label: "Calf (Back)", sessions: "½ session" },
-      { label: "Right/Left Side of Lower Leg", sessions: "½ session" },
-      { label: "Knee", sessions: "1 session" },
-      { label: "Full Thigh", sessions: "4 sessions" },
-      { label: "Front/Back Side of Thigh", sessions: "2 sessions" },
-      { label: "Right/Left Side of Thigh", sessions: "2 sessions" },
-      { label: "Feet", sessions: "1 session" },
-    ],
-  };
 
   const handleChange = (e) => {
     const { name, value, type, checked, files } = e.target;
     if (type === "checkbox") {
       setFormData((p) => ({ ...p, [name]: checked }));
     } else if (type === "file") {
-      setFormData((p) => ({ ...p, [name]: files }));
+      setFormData((p) => ({ ...p, [name]: Array.from(files) })); // ✅ зберігаємо масив файлів
     } else {
       setFormData((p) => ({ ...p, [name]: value }));
     }
@@ -135,54 +85,20 @@ function TattooBookingForm() {
   const ctaBtn =
     "rounded-lg px-5 py-3 border border-orange-200 text-orange-500 bg-transparent font-thin uppercase transition hover:border-orange-500";
   const optionBtn = (isSelected = false, fullWidth = false) =>
-    `rounded-lg bg-gray-100 px-5 py-3 ${fullWidth ? "w-full" : ""
-    } font-thin uppercase transition ${isSelected
-      ? "bg-gray-100 border border-black text-black"
-      : "bg-gray-100 border border-transparent text-black"
+    `rounded-lg bg-gray-100 px-5 py-3 ${fullWidth ? "w-full" : ""} font-thin uppercase transition ${
+      isSelected
+        ? "bg-gray-100 border border-black text-black"
+        : "bg-gray-100 border border-transparent text-black"
     }`;
 
-  /* ------------------- TRANSITION MEASUREMENT SETUP ------------------- */
-  const panelRefs = useRef({});
-  const wrapperRef = useRef(null);
-  const [wrapperHeight, setWrapperHeight] = useState("auto");
-
-  // Set wrapper height to the height of the active panel so we get smooth height transitions
-  useEffect(() => {
-    function measure() {
-      const el = panelRefs.current[step];
-      if (el) {
-        const h = el.getBoundingClientRect().height;
-        setWrapperHeight(`${Math.ceil(h)}px`);
-      } else {
-        setWrapperHeight("auto");
-      }
-    }
-    // small timeout helps if images are still loading
-    const t = setTimeout(measure, 20);
-
-    window.addEventListener("resize", measure);
-
-    // try ResizeObserver for panels (if available) to recalc height when content changes
-    let ro;
-    if (window.ResizeObserver) {
-      ro = new ResizeObserver(measure);
-      Object.values(panelRefs.current).forEach((el) => el && ro.observe(el));
-    }
-
-    return () => {
-      clearTimeout(t);
-      window.removeEventListener("resize", measure);
-      if (ro) ro.disconnect();
-    };
-  }, [step, formData.references.length, formData.idea, formData.email]); // run when relevant content could change
-
-  /* ------------------- RENDER HELPERS FOR EACH STEP ------------------- */
   const StepOne = () => (
     <div className="grid grid-cols-1 gap-6">
-      <div className={`${stepTitleBase} text-left`}>{stepTitles[1]}</div>
+      <div className={`${stepTitleBase} text-left`}>Tell Us About You</div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-6">
         <div>
-          <label className={labelBase}>What's your full name?<span className="text-orange-500"> *</span></label>
+          <label className={labelBase}>
+            What's your full name?<span className="text-orange-500"> *</span>
+          </label>
           <input
             className={inputBase}
             name="fullName"
@@ -193,7 +109,9 @@ function TattooBookingForm() {
           {errors.fullName && <p className="error-text">{errors.fullName}</p>}
         </div>
         <div>
-          <label className={labelBase}>Where are you located?<span className="text-orange-500"> *</span></label>
+          <label className={labelBase}>
+            Where are you located?<span className="text-orange-500"> *</span>
+          </label>
           <input
             className={inputBase}
             name="location"
@@ -225,7 +143,9 @@ function TattooBookingForm() {
           {errors.gender && <p className="error-text">{errors.gender}</p>}
         </div>
         <div>
-          <label className={labelBase}>Are you over 18?<span className="text-orange-500"> *</span></label>
+          <label className={labelBase}>
+            Are you over 18?<span className="text-orange-500"> *</span>
+          </label>
           <div className="flex gap-4">
             {["Yes", "No"].map((opt) => {
               const sel = formData.is18 === opt;
@@ -258,7 +178,7 @@ function TattooBookingForm() {
     </div>
   );
 
-  const StepTwo = () => (
+    const StepTwo = () => (
     <div className="grid grid-cols-1 gap-6">
       <div className={`${stepTitleBase} text-left`}>{stepTitles[2]}</div>
       <div>
@@ -564,19 +484,20 @@ function TattooBookingForm() {
     </div>
   );
 
-  /* Map of step renderers for convenience */
   const renderers = {
     1: StepOne,
-    2: StepTwo,
-    3: StepThree,
-    4: StepFour,
+    // 2: StepTwo,
+    // 3: StepThree,
+    // 4: StepFour,
   };
 
-  /* ------------------- MAIN RENDER ------------------- */
   return (
     <div className="tattoo-form flex flex-col min-h-screen font-sans">
       <div className="w-full bg-gray-200 h-0.5">
-        <div style={{ width: `${progress}%` }} className="h-0.5 bg-orange-500 transition-all duration-300" />
+        <div
+          style={{ width: `${progress}%` }}
+          className="h-0.5 bg-orange-500 transition-all duration-300"
+        />
       </div>
 
       <div className="flex flex-col md:flex-row flex-1 w-full">
@@ -588,27 +509,9 @@ function TattooBookingForm() {
 
         <div className="w-full md:w-1/2 p-8 sm:p-6 md:p-8">
           <div className="w-full p-4">
-            {/* NEW: animated wrapper */}
-            <div
-              className="step-panels"
-              ref={wrapperRef}
-              style={{ height: wrapperHeight }}
-              aria-live="polite"
-            >
-              {[1, 2, 3, 4].map((i) => {
-                const Panel = renderers[i];
-                const posClass = i === step ? "active" : i < step ? "left" : "right";
-                return (
-                  <div
-                    key={i}
-                    ref={(el) => (panelRefs.current[i] = el)}
-                    className={`step-panel ${posClass}`}
-                    aria-hidden={i === step ? "false" : "true"}
-                  >
-                    <Panel />
-                  </div>
-                );
-              })}
+            {/* Унікальні класи */}
+            <div className="form-panels" aria-live="polite">
+              <div className="form-panel active">{renderers[step]()}</div>
             </div>
           </div>
         </div>
