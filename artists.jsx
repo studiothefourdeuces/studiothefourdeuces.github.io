@@ -10,7 +10,7 @@ const Artists = () => {
   ];
 
   return (
-    <div className="artists-panels bg-[#010101]">
+    <div className="artists-panels">
       <div className="artists-panel active p-4 sm:p-6 md:p-8">
         {/* Carousel container */}
         <div className="flex overflow-x-auto gap-6 snap-x snap-mandatory pb-4 hide-scrollbar">

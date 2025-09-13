@@ -132,11 +132,11 @@ function TattooBookingForm() {
     const stepTitleBase = "text-6xl sm:text-8xl md:text-8xl font-extrabold mb-6";
     const labelBase = "mb-[5px] block font-thin leading-[140%]";
     const ctaBtn =
-        "rounded-lg px-5 py-3 border border-orange-200 text-orange-500 bg-transparent font-thin uppercase transition hover:border-orange-500";
+        "rounded-lg px-5 py-3 border border-orange-500 text-orange-500 bg-transparent font-thin uppercase transition hover:bg-orange-500 hover:text-black";
     const optionBtn = (isSelected = false, fullWidth = false) =>
         `rounded-lg bg-gray-100 px-5 py-3 ${fullWidth ? "w-full" : ""} font-thin uppercase transition ${isSelected
-            ? "bg-gray-100 border border-black text-black"
-            : "bg-gray-100 border border-transparent text-black"
+            ? "bg-transparent border border-[#868686]"
+            : "bg-transparent border border-[#3c3c3c]"
         }`;
 
     const StepOne = () => (
@@ -237,7 +237,7 @@ function TattooBookingForm() {
                     name="idea"
                     value={formData.idea}
                     onChange={handleChange}
-                    placeholder="YOUR IDEA HERE"
+                    placeholder="E.G. A REALISTIC STYLE LION TATTOO THAT CAPTURES EVERY DETAIL, FROM THE TEXTURE OF THE MANE TO THE DEPTH OF THE EYES"
                 />
                 {errors.idea && <p className="error-text">{errors.idea}</p>}
             </div>
@@ -260,7 +260,7 @@ function TattooBookingForm() {
                         name="style"
                         value={formData.style}
                         onChange={handleChange}
-                        placeholder="E.G. TRADITIONAL, MINIMALIST"
+                        placeholder="E.G. FINELINE, CHICANO"
                     />
                 </div>
             </div>
@@ -281,10 +281,10 @@ function TattooBookingForm() {
                             }}
                             disabled={formData.references.length >= 4}
                         />
-                        <img src="image.svg" alt="Upload" className="w-12 h-12" />
+                        <img src="image.svg" alt="Upload" className="w-12 h-12 invert sepia saturate-200 hue-rotate-180" />
                     </label>
 
-                    <div className="text-xs text-black/20">
+                    <div className="text-xs text-[#868686]">
                         Upload reference images of your tattoo idea. Accepted formats: PNG, JPG, JPEG. Maximum size: 5 MB per file.
                     </div>
                     {errors.references && <p className="error-text">{errors.references}</p>}
@@ -297,7 +297,7 @@ function TattooBookingForm() {
                             {formData.references.map((file, index) => (
                                 <div
                                     key={index}
-                                    className="relative group border border-gray-200 rounded-lg overflow-hidden"
+                                    className="relative group border border-[#3c3c3c] rounded-lg overflow-hidden"
                                 >
                                     <img
                                         src={URL.createObjectURL(file)}
@@ -381,7 +381,7 @@ function TattooBookingForm() {
                                 >
                                     <div className="flex justify-between w-full">
                                         <span>{opt.label.toUpperCase()}</span>
-                                        <small className="text-xs text-black/50">{opt.sessions}</small>
+                                        <small className="text-xs text-[#868686]">{opt.sessions}</small>
                                     </div>
                                 </button>
                             );
@@ -541,7 +541,7 @@ function TattooBookingForm() {
 
     return (
         <div className="tattoo-form flex flex-col min-h-screen font-sans">
-            <div className="w-full bg-gray-200 h-0.5">
+            <div className="w-full bg-[#3c3c3c] h-0.5">
                 <div
                     style={{ width: `${progress}%` }}
                     className="h-0.5 bg-orange-500 transition-all duration-300"
@@ -549,15 +549,14 @@ function TattooBookingForm() {
             </div>
 
             <div className="flex flex-col md:flex-row flex-1 w-full">
-                <div className="w-full md:w-1/2 flex flex-col justify-start items-start p-4 sm:p-6 md:p-8">
-                    <div className="text-black font-thin text-sm sm:text-base mb-2">
-                        Step {step} / 4
+                <div className="w-full md:w-1/2 flex flex-col p-2 sm:p-4 md:p-4">
+                    <div className="stepNumber">
+                        {step} / 4
                     </div>
                 </div>
 
                 <div className="w-full md:w-1/2 p-8 sm:p-6 md:p-8">
-                    <div className="w-full p-4">
-                        {/* Унікальні класи */}
+                    <div className="w-full">
                         <div className="form-panels" aria-live="polite">
                             <div className="form-panel active">{renderers[step]()}</div>
                         </div>

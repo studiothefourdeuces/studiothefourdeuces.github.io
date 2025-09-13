@@ -1,9 +1,9 @@
 /* Body */
 body {
-    background-color: #f9f8f6 !important;
+    background-color: #010101 !important;
     font-family: 'DM Sans', sans-serif;
     text-transform: uppercase !important;
-    color: #323232;
+    color: #cacaca;
     font-size: clamp(12px, 1.1vw, 18px);
 }
 
@@ -17,10 +17,18 @@ body {
 font-family: 'DM Sans', sans-serif;
     font-weight: thin;
     font-size: 1rem !important;
+    background-color: transparent !important;
+    border: 1px solid #3c3c3c;
     font-style: normal;
     line-height: 140%;
     letter-spacing: -0.004em;
     border-radius: 2px;
+    color: #f0f0f0;
+}
+
+.tattoo-form input:focus,
+.tattoo-form textarea:focus {
+    border: 1px solid #868686;
 }
 
 .tattoo-form button,
@@ -34,15 +42,6 @@ font-family: 'DM Sans', sans-serif;
     line-height: 140%;
     letter-spacing: -0.004em;
     border-radius: 2px;
-}
-
-/* Putton styling */
-.tattoo-form button {
-    background-color: #f0efed;
-}
-
-.tattoo-form button:hover {
-    background-color: #ebebeb;
 }
 
 /* Artist button */
@@ -68,10 +67,6 @@ font-family: 'DM Sans', sans-serif;
     border-color: #323232;
 }
 
-.tattoo-form button.no-bg {
-    background-color: transparent;
-}
-
 .tattoo-form input,
 .tattoo-form textarea {
     background-color: #f0efed;
@@ -81,6 +76,7 @@ font-family: 'DM Sans', sans-serif;
 .tattoo-form input::placeholder,
 .tattoo-form textarea::placeholder {
     opacity: 1;
+    color: rgb(50, 50, 50);
     font-weight: 400;
 }
 
@@ -99,9 +95,13 @@ font-family: 'DM Sans', sans-serif;
     align-items: center;
     width: 100%;
     height: 6rem;
-    background-color: #f0efed;
     border-radius: 2px;
     cursor: pointer;
+    border: 1px solid #3c3c3c;
+}
+
+.tattoo-form label.upload-btn:hover {
+    border: 1px solid #868686;
 }
 
 /* Step title */
@@ -125,28 +125,28 @@ font-family: 'DM Sans', sans-serif;
     }
 }
 
-/* Page title */
-.page-title {
+.stepNumber {
     font-weight: 900;
-    opacity: 0.1;
-    margin-bottom: 1.5rem;
-    padding: 1rem;
-    line-height: 1;
+    color: #3c3c3c;
 
     /* Mobile */
-    font-size: 2.4rem;
-    text-align: left;
+    font-size: 2rem;
+    text-align: center;
+}
 
-    /* Tablet */
-    @media (min-width: 640px) {
+/* Tablet */
+@media (min-width: 640px) {
+    .stepNumber {
         font-size: 4rem;
         text-align: left;
     }
+}
 
-    /* Desktop */
-    @media (min-width: 1024px) {
-        font-size: 10rem;
-        text-align: center;
+/* Desktop */
+@media (min-width: 1024px) {
+    .stepNumber {
+        font-size: 8rem;
+        text-align: left;
     }
 }
 
@@ -229,7 +229,7 @@ font-family: 'DM Sans', sans-serif;
 }
 
 .artist-card {
-    border: 1px solid rgb(29, 29, 29);
+    border: 1px solid #3c3c3c;
     padding: 1rem;
     border-radius: 2px;
 }
@@ -256,4 +256,9 @@ font-family: 'DM Sans', sans-serif;
 .hide-scrollbar {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #010101 inset !important; /* custom bg */
+  -webkit-text-fill-color: #f0f0f0 !important; /* custom text */
 }
