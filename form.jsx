@@ -218,7 +218,7 @@ function TattooBookingForm() {
                     onClick={() => {
                         if (validateStep(1)) setStep(2);
                     }}
-                    className={`${ctaBtn} no-bg`}
+                    className={ctaBtn}
                 >
                     Next
                 </button>
@@ -333,7 +333,7 @@ function TattooBookingForm() {
                     onClick={() => {
                         if (validateStep(2)) setStep(3);
                     }}
-                    className={`${ctaBtn} no-bg`}
+                    className={ctaBtn}
                 >
                     Next
                 </button>
@@ -400,7 +400,7 @@ function TattooBookingForm() {
                     onClick={() => {
                         if (validateStep(3)) setStep(4);
                     }}
-                    className={`${ctaBtn} no-bg`}
+                    className={ctaBtn}
                 >
                     Next
                 </button>
@@ -524,7 +524,7 @@ function TattooBookingForm() {
                             alert("Form submitted successfully!");
                         }
                     }}
-                    className={`${ctaBtn} no-bg`}
+                    className={ctaBtn}
                 >
                     Schedule
                 </button>
@@ -540,7 +540,7 @@ function TattooBookingForm() {
     };
 
     return (
-        <div className="tattoo-form flex flex-col min-h-screen font-sans">
+        <div className="tattoo-form flex flex-col font-sans p-8 sm:p-6 md:p-8 border-b border-[#3c3c3c]">
             <div className="w-full bg-[#3c3c3c] h-0.5">
                 <div
                     style={{ width: `${progress}%` }}
@@ -548,14 +548,14 @@ function TattooBookingForm() {
                 />
             </div>
 
-            <div className="flex flex-col md:flex-row flex-1 w-full">
-                <div className="w-full md:w-1/2 flex flex-col p-2 sm:p-4 md:p-4">
+            <div className="flex flex-col md:flex-row flex-1 w-full mt-8">
+                <div className="hidden md:flex w-full md:w-1/2 flex-col">
                     <div className="stepNumber">
                         {step} / 4
                     </div>
                 </div>
 
-                <div className="w-full md:w-1/2 p-8 sm:p-6 md:p-8">
+                <div className="w-full md:w-1/2 mt-8">
                     <div className="w-full">
                         <div className="form-panels" aria-live="polite">
                             <div className="form-panel active">{renderers[step]()}</div>

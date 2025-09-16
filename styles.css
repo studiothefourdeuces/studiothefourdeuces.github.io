@@ -33,8 +33,7 @@ font-family: 'DM Sans', sans-serif;
 
 .tattoo-form button,
 .tattoo-form label,
-.tattoo-form .step-title,
-.instagram-btn {
+.tattoo-form .step-title {
     font-family: 'DM Sans', sans-serif;
     font-weight: thin;
     font-size: 0.9rem !important;
@@ -42,29 +41,6 @@ font-family: 'DM Sans', sans-serif;
     line-height: 140%;
     letter-spacing: -0.004em;
     border-radius: 2px;
-}
-
-/* Artist button */
-.artist-button,
-.instagram-button {
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 300;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    color: #323232;
-    background-color: #f0efed;
-    padding: 0.5rem 1rem;
-    border: 1px solid transparent;
-    transition: background-color 0.2s, border-color 0.2s;
-}
-
-.instagram-button {
-    cursor: pointer;
-}
-
-.instagram-button:hover {
-    background-color: #ebebeb;
-    border-color: #323232;
 }
 
 .tattoo-form input,
@@ -261,4 +237,12 @@ font-family: 'DM Sans', sans-serif;
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px #010101 inset !important; /* custom bg */
   -webkit-text-fill-color: #f0f0f0 !important; /* custom text */
+}
+
+.footer button {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: thin;
+    font-size: 0.9rem;
+    letter-spacing: -0.004em;
+    text-transform: uppercase;
 }
