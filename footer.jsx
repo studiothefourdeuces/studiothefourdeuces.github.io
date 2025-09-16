@@ -11,7 +11,7 @@ function Footer() {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="p-8 sm:p-6 md:p-8">
+        <footer className="p-6 sm:p-6 md:p-20">
 
             {/* Row 1 */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-40 mb-12">

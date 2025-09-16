@@ -31,7 +31,7 @@ const Artists = () => {
 
     return (
         <div className="artists-panels">
-            <div className="artists-panel active p-4 sm:p-6 md:p-8">
+            <div className="artists-panel active p-6 sm:p-6 md:p-20">
                 <div className="w-full mt-8">
                     <div className="text-6xl sm:text-8xl md:text-8xl font-extrabold mb-6">
                         Artists

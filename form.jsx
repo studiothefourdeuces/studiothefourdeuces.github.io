@@ -541,7 +541,7 @@ function TattooBookingForm() {
 
     return (
         <div className="tattoo-form flex flex-col min-h-screen md:min-h-0">
-            <div className="flex flex-col md:flex-row flex-1 w-full mt-8 py-8 px-6 sm:py-8 sm:px-6 md:py-8 md:px-8 ">
+            <div className="flex flex-col md:flex-row flex-1 w-full mt-8 py-8 px-6 sm:py-8 sm:px-6 md:py-8 md:px-20 ">
                 <div className="hidden md:flex w-full md:w-1/2 flex-col">
                     <div className="text-xs font-medium mb-2 text-[#f0efed]/[0.4]">
                         [Step {step} / 4]
