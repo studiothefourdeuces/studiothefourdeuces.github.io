@@ -115,7 +115,7 @@ function Footer() {
                 <div className="text-xs">© {currentYear} All rights reserved</div>
                 <div className="hidden sm:block text-xs">•</div>
                 <div className="text-xs flex items-center gap-1">
-                    Made by <a className={navBtn} href="https://aerdt.xyz/" target="_blank" rel="noopener noreferrer">
+                    Desinged & crafted by <a className={navBtn} href="https://aerdt.xyz/" target="_blank" rel="noopener noreferrer">
                         Artem Erdt
                     </a>
                 </div>
