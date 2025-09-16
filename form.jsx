@@ -540,7 +540,7 @@ function TattooBookingForm() {
     };
 
     return (
-        <div className="tattoo-form flex flex-col font-sans p-8 sm:p-6 md:p-8 border-b border-[#3c3c3c]">
+        <div className="tattoo-form flex flex-col font-sans p-8 sm:p-6 md:p-8 border-b border-[#3c3c3c] min-h-screen">
             <div className="w-full bg-[#3c3c3c] h-0.5">
                 <div
                     style={{ width: `${progress}%` }}

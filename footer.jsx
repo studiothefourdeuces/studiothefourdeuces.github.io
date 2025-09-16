@@ -112,7 +112,7 @@ function Footer() {
             {/* Credits */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 pb-6 text-[#868686]">
                 <div className="text-xs">© {currentYear} All rights reserved</div>
-                <div className="text-xs">•</div>
+                <div className="hidden sm:block text-xs">•</div>
                 <div className="text-xs flex items-center gap-1">Made by <button className={navBtn}>Artem Erdt</button></div>
             </div>
         </footer>
