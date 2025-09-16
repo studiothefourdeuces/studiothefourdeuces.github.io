@@ -28,7 +28,7 @@ body {
 
 .tattoo-form input:focus,
 .tattoo-form textarea:focus {
-    border: 1px solid #868686;
+    border: 1px solid white;
 }
 
 .tattoo-form button,
@@ -77,7 +77,7 @@ body {
 }
 
 .tattoo-form label.upload-btn:hover {
-    border: 1px solid #868686;
+    border: 1px solid white;
 }
 
 /* Step title */

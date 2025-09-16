@@ -135,7 +135,7 @@ function TattooBookingForm() {
         "rounded-lg px-5 py-3 border border-orange-500 text-orange-500 bg-transparent font-thin uppercase transition hover:bg-orange-500 hover:text-black";
     const optionBtn = (isSelected = false, fullWidth = false) =>
         `rounded-lg bg-gray-100 px-5 py-3 ${fullWidth ? "w-full" : ""} font-thin uppercase transition ${isSelected
-            ? "bg-transparent border border-[#868686]"
+            ? "bg-transparent border border-white"
             : "bg-transparent border border-[#3c3c3c]"
         }`;
 
@@ -543,7 +543,7 @@ function TattooBookingForm() {
         <div className="tattoo-form flex flex-col min-h-screen md:min-h-0">
             <div className="flex flex-col md:flex-row flex-1 w-full mt-8 py-8 px-6 sm:py-8 sm:px-6 md:py-8 md:px-8 ">
                 <div className="hidden md:flex w-full md:w-1/2 flex-col">
-                    <div className="text-xs font-thin">
+                    <div className="text-xs font-medium mb-2 text-[#f0efed]/[0.4]">
                         [Step {step} / 4]
                     </div>
                 </div>
