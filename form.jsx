@@ -540,18 +540,11 @@ function TattooBookingForm() {
     };
 
     return (
-        <div className="tattoo-form flex flex-col font-sans p-8 sm:p-6 md:p-8 border-b border-[#3c3c3c] min-h-screen">
-            <div className="w-full bg-[#3c3c3c] h-0.5">
-                <div
-                    style={{ width: `${progress}%` }}
-                    className="h-0.5 bg-orange-500 transition-all duration-300"
-                />
-            </div>
-
-            <div className="flex flex-col md:flex-row flex-1 w-full mt-8">
+        <div className="tattoo-form flex flex-col min-h-screen md:min-h-0">
+            <div className="flex flex-col md:flex-row flex-1 w-full mt-8 py-8 px-6 sm:py-8 sm:px-6 md:py-8 md:px-8 ">
                 <div className="hidden md:flex w-full md:w-1/2 flex-col">
-                    <div className="stepNumber">
-                        {step} / 4
+                    <div className="text-xs font-thin">
+                        [Step {step} / 4]
                     </div>
                 </div>
 
@@ -562,6 +555,12 @@ function TattooBookingForm() {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className="w-full bg-[#3c3c3c] h-0.5">
+                <div
+                    style={{ width: `${progress}%` }}
+                    className="h-0.5 bg-orange-500 transition-all duration-300"
+                />
             </div>
         </div>
     );

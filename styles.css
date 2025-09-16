@@ -8,13 +8,13 @@ body {
 }
 
 .text-fluid {
-  font-size: clamp(12px, 1.1vw, 18px);
+    font-size: clamp(12px, 1.1vw, 18px);
 }
 
 /* Base text styling for the form */
 .tattoo-form input,
 .tattoo-form textarea {
-font-family: 'DM Sans', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     font-weight: thin;
     font-size: 1rem !important;
     background-color: transparent !important;
@@ -88,41 +88,19 @@ font-family: 'DM Sans', sans-serif;
     line-height: 1;
 
     /* Mobile */
-    font-size: 1.75rem; /* ~28px */
+    font-size: 1.75rem;
+    /* ~28px */
 
     /* Tablet */
     @media (min-width: 640px) {
-        font-size: 2.25rem; /* ~36px */
+        font-size: 2.25rem;
+        /* ~36px */
     }
 
     /* Desktop */
     @media (min-width: 1024px) {
-        font-size: 3rem; /* ~48px */
-    }
-}
-
-.stepNumber {
-    font-weight: 900;
-    color: #3c3c3c;
-
-    /* Mobile */
-    font-size: 2rem;
-    text-align: center;
-}
-
-/* Tablet */
-@media (min-width: 640px) {
-    .stepNumber {
-        font-size: 4rem;
-        text-align: left;
-    }
-}
-
-/* Desktop */
-@media (min-width: 1024px) {
-    .stepNumber {
-        font-size: 8rem;
-        text-align: left;
+        font-size: 3rem;
+        /* ~48px */
     }
 }
 
@@ -144,64 +122,69 @@ font-family: 'DM Sans', sans-serif;
 }
 
 @media (min-width: 640px) {
+
     .tattoo-form input,
     .tattoo-form textarea,
     .tattoo-form button,
     .tattoo-form label {
-        font-size: 1rem; /* text-base */
+        font-size: 1rem;
+        /* text-base */
     }
 }
 
 @media (min-width: 768px) {
+
     .tattoo-form input,
     .tattoo-form textarea,
     .tattoo-form button,
     .tattoo-form label {
-        font-size: 1.125rem; /* text-lg */
+        font-size: 1.125rem;
+        /* text-lg */
     }
 }
 
 /* --- Step transition styles --- */
 .step-panels {
-  position: relative;
-  overflow: hidden;
-  transition: height 320ms ease;
+    position: relative;
+    overflow: hidden;
+    transition: height 320ms ease;
 }
 
 /* Each panel sits on top of each other; we animate transform + opacity */
 .step-panel {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  opacity: 0;
-  transform: translateX(20px);
-  transition: transform 360ms cubic-bezier(.22,.9,.3,1), opacity 260ms ease;
-  pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: transform 360ms cubic-bezier(.22, .9, .3, 1), opacity 260ms ease;
+    pointer-events: none;
 }
 
 /* Visible panel */
 .step-panel.active {
-  opacity: 1;
-  transform: translateX(0);
-  pointer-events: auto;
-  z-index: 2;
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+    z-index: 2;
 }
 
 /* Panels that are before the active (we slide them left) */
 .step-panel.left {
-  transform: translateX(-20px);
+    transform: translateX(-20px);
 }
 
 /* Panels that are after the active (we slide them right) */
 .step-panel.right {
-  transform: translateX(20px);
+    transform: translateX(20px);
 }
 
 /* Accessibility: hide inactive panels from screen readers */
 .step-panel[aria-hidden="true"] {
-  pointer-events: none;
-  visibility: visible; /* remain visible for measurement; opacity handles display */
+    pointer-events: none;
+    visibility: visible;
+    /* remain visible for measurement; opacity handles display */
 }
 
 .artist-card {
@@ -212,31 +195,35 @@ font-family: 'DM Sans', sans-serif;
 
 /* Image hover effect */
 .artist-image-wrapper {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 .artist-image {
-  transition: transform 0.3s ease, filter 0.3s ease;
-  border-radius: 2px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    border-radius: 2px;
 }
 
 .artist-image-wrapper:hover .artist-image {
-  transform: scale(1.05);
-  filter: brightness(0.9);
+    transform: scale(1.05);
+    filter: brightness(0.9);
 }
 
 .hide-scrollbar::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 .hide-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
 input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0px 1000px #010101 inset !important; /* custom bg */
-  -webkit-text-fill-color: #f0f0f0 !important; /* custom text */
+    -webkit-box-shadow: 0 0 0px 1000px #010101 inset !important;
+    /* custom bg */
+    -webkit-text-fill-color: #f0f0f0 !important;
+    /* custom text */
 }
 
 .footer button {
@@ -245,4 +232,22 @@ input:-webkit-autofill {
     font-size: 0.9rem;
     letter-spacing: -0.004em;
     text-transform: uppercase;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+
+}
+
+.animate-marquee {
+    display: inline-flex;
+    animation: marquee 20s linear infinite;
+    align-items: center;
+    /* vertically center logo and text */
 }

@@ -6,16 +6,17 @@ function Footer() {
         "py-1 flex justify-start rounded-xs text-[#868686] text-xs bg-transparent font-thin uppercase transition hover:text-[#ffffff]";
 
     const address = "Van Baerlestraat 126 H, 1071 BD Amsterdam, Netherlands";
-    const googleMapsLink = "https://www.google.com/maps/place/Van+Baerlestraat+126+H,+1071+BD+Amsterdam,+Netherlands";
+    const googleMapsLink = "https://maps.app.goo.gl/FtpEaaMod7Q8KDMr7";
 
     const currentYear = new Date().getFullYear();
 
     return (
         <footer className="p-8 sm:p-6 md:p-8">
+
             {/* Row 1 */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-40 mb-12">
                 <div className="flex flex-col gap-4 md:col-span-1">
-                    <h3 className="text-xs font-bold">The Four Deuces</h3>
+                    <h3 className="text-xs font-bold">[The Four Deuces]</h3>
                     <p className="text-xs">KVK: 88925161</p>
                     <p className="text-xs">{address}</p>
                     <a
@@ -31,9 +32,9 @@ function Footer() {
                             className="absolute top-1 right-1 w-4 h-4 duration-300 opacity-60 group-hover:opacity-100"
                         />
                     </a>
-                    <h3 className="text-xs font-bold">Follow us</h3>
+                    <h3 className="text-xs font-bold">[Follow us]</h3>
                     <a
-                        href="https://www.instagram.com/thefourdeuces/"
+                        href="https://www.instagram.com/the.four.deuces/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className={`${ctaBtn} relative group overflow-hidden`}
@@ -63,7 +64,7 @@ function Footer() {
             {/* Row 2 */}
             <div className="grid grid-cols-2 gap-12 md:gap-40 md:grid-cols-3 mb-12">
                 <div className="flex flex-col gap-4">
-                    <h3 className="text-xs font-bold">Clients</h3>
+                    <h3 className="text-xs font-bold">[Clients]</h3>
                     <button className={navBtn}>Artists</button>
                     <button className={navBtn}>Aftercare</button>
                     <button className={navBtn}>Preparation</button>
@@ -71,7 +72,7 @@ function Footer() {
                 </div>
 
                 <div className="flex flex-col gap-4">
-                    <h3 className="text-xs font-bold">Artists</h3>
+                    <h3 className="text-xs font-bold">[Artists]</h3>
                     <button className={navBtn}>Residents</button>
                     <button className={navBtn}>Guests</button>
                     <button className={navBtn}>Facilities</button>
@@ -79,7 +80,7 @@ function Footer() {
                 </div>
 
                 <div className="flex flex-col gap-4 col-span-2 md:col-span-1">
-                    <h3 className="text-xs font-bold">Terms</h3>
+                    <h3 className="text-xs font-bold">[Terms]</h3>
                     <button className={navBtn}>
                         Terms and Conditions<span className="text-[10px] text-white ml-1">(English)</span>
                     </button>
@@ -98,13 +99,13 @@ function Footer() {
 
                 {/* Second div */}
                 <div className="flex flex-col gap-4 col-span-1 md:col-span-1">
-                    <h3 className="text-xs font-bold">Collaboration</h3>
+                    <h3 className="text-xs font-bold">[Collaboration]</h3>
                     <button className={navBtn}>studio@thefourdeuces.nl</button>
                 </div>
 
                 {/* Third div */}
                 <div className="flex flex-col gap-4 col-span-1 md:col-span-1">
-                    <h3 className="text-xs font-bold">Booking</h3>
+                    <h3 className="text-xs font-bold">[Booking]</h3>
                     <button className={navBtn}>booking@thefourdeuces.nl</button>
                 </div>
             </div>
@@ -113,7 +114,11 @@ function Footer() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 pb-6 text-[#868686]">
                 <div className="text-xs">© {currentYear} All rights reserved</div>
                 <div className="hidden sm:block text-xs">•</div>
-                <div className="text-xs flex items-center gap-1">Made by <button className={navBtn}>Artem Erdt</button></div>
+                <div className="text-xs flex items-center gap-1">
+                    Made by <a className={navBtn} href="https://aerdt.xyz/" target="_blank" rel="noopener noreferrer">
+                        Artem Erdt
+                    </a>
+                </div>
             </div>
         </footer>
     );
