@@ -22,13 +22,6 @@ function TattooBookingForm() {
         confirmInfo: "",
     });
 
-    const stepTitles = {
-        1: "Request A Tattoo",
-        2: "What's Your Idea",
-        3: "Where Do You Want It",
-        4: "Contact Details",
-    };
-
     const bodyPartOptions = {
         Arm: [
             { label: "Full Arm Sleeve", sessions: "5 sessions" },
@@ -124,111 +117,126 @@ function TattooBookingForm() {
         return Object.keys(newErrors).length === 0;
     };
 
-    const progress = (step / 4) * 100;
-
     const inputBase =
-        "p-4 w-full rounded-lg bg-gray-100 border border-transparent focus:outline-none placeholder:text-black/30 font-sans font-thin text-base md:text-lg leading-relaxed";
+        "p-4 w-full rounded-lg border border-transparent focus:outline-none placeholder:text-black/30 font-sans font-thin text-base md:text-lg leading-relaxed";
 
-    const stepTitleBase = "text-6xl sm:text-8xl md:text-8xl font-extrabold mb-6";
     const labelBase = "mb-[5px] block font-thin leading-[140%]";
     const ctaBtn =
         "rounded-lg px-5 py-3 border border-orange-500 text-orange-500 bg-transparent font-thin uppercase transition hover:bg-orange-500 hover:text-black";
     const optionBtn = (isSelected = false, fullWidth = false) =>
-        `rounded-lg bg-gray-100 px-5 py-3 ${fullWidth ? "w-full" : ""} font-thin uppercase transition ${isSelected
+        `rounded-lg px-5 py-3 ${fullWidth ? "w-full" : ""} font-thin uppercase transition ${isSelected
             ? "bg-transparent border border-white"
             : "bg-transparent border border-[#3c3c3c]"
         }`;
 
     const StepOne = () => (
-        <div className="grid grid-cols-1 gap-6">
-            <div className={`${stepTitleBase} text-left`}>{stepTitles[1]}</div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-6">
-                <div>
-                    <label className={labelBase}>
-                        What's your full name?<span className="text-orange-500"> *</span>
-                    </label>
-                    <input
-                        className={inputBase}
-                        name="fullName"
-                        value={formData.fullName}
-                        onChange={handleChange}
-                        placeholder="JOHN DOE"
-                    />
-                    {errors.fullName && <p className="error-text">{errors.fullName}</p>}
+        <div className="grid grid-cols-1 gap-6 relative">
+            <div className="relative">
+                <div className="text-6xl sm:text-8xl md:text-8xl font-extrabold mb-6">
+                    Request A{" "}
+                    <span className="relative inline-block">
+                        Tattoo
+                        <span className="absolute -top-2 -right-8 text-xl sm:text-2xl md:text-3xl font-bold text-orange-500">
+                            1/4
+                        </span>
+                    </span>
                 </div>
-                <div>
-                    <label className={labelBase}>
-                        Where are you located?<span className="text-orange-500"> *</span>
-                    </label>
-                    <input
-                        className={inputBase}
-                        name="location"
-                        value={formData.location}
-                        onChange={handleChange}
-                        placeholder="AMSTERDAM, NETHERLANDS"
-                    />
-                    {errors.location && <p className="error-text">{errors.location}</p>}
-                </div>
-                <div>
-                    <label className={labelBase}>
-                        What's your gender?<span className="text-orange-500"> *</span>
-                    </label>
-                    <div className="flex flex-row gap-4">
-                        {["Male", "Female", "Other"].map((opt) => {
-                            const sel = formData.gender === opt;
-                            return (
-                                <button
-                                    key={opt}
-                                    type="button"
-                                    onClick={() => setFormData((p) => ({ ...p, gender: opt }))}
-                                    className={`${optionBtn(sel)} flex-1`}
-                                >
-                                    {opt}
-                                </button>
-                            );
-                        })}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-6">
+                    <div>
+                        <label className={labelBase}>
+                            What's your full name?<span className="text-orange-500"> *</span>
+                        </label>
+                        <input
+                            className={inputBase}
+                            name="fullName"
+                            value={formData.fullName}
+                            onChange={handleChange}
+                            placeholder="JOHN DOE"
+                        />
+                        {errors.fullName && <p className="error-text">{errors.fullName}</p>}
                     </div>
-                    {errors.gender && <p className="error-text">{errors.gender}</p>}
-                </div>
-                <div>
-                    <label className={labelBase}>
-                        Are you over 18?<span className="text-orange-500"> *</span>
-                    </label>
-                    <div className="flex gap-4">
-                        {["Yes", "No"].map((opt) => {
-                            const sel = formData.is18 === opt;
-                            return (
-                                <button
-                                    key={opt}
-                                    type="button"
-                                    onClick={() => setFormData((p) => ({ ...p, is18: opt }))}
-                                    className={optionBtn(sel)}
-                                >
-                                    {opt}
-                                </button>
-                            );
-                        })}
+                    <div>
+                        <label className={labelBase}>
+                            Where are you located?<span className="text-orange-500"> *</span>
+                        </label>
+                        <input
+                            className={inputBase}
+                            name="location"
+                            value={formData.location}
+                            onChange={handleChange}
+                            placeholder="AMSTERDAM, NETHERLANDS"
+                        />
+                        {errors.location && <p className="error-text">{errors.location}</p>}
                     </div>
-                    {errors.is18 && <p className="error-text">{errors.is18}</p>}
+                    <div>
+                        <label className={labelBase}>
+                            What's your gender?<span className="text-orange-500"> *</span>
+                        </label>
+                        <div className="flex flex-row gap-4">
+                            {["Male", "Female", "Other"].map((opt) => {
+                                const sel = formData.gender === opt;
+                                return (
+                                    <button
+                                        key={opt}
+                                        type="button"
+                                        onClick={() => setFormData((p) => ({ ...p, gender: opt }))}
+                                        className={`${optionBtn(sel)} flex-1`}
+                                    >
+                                        {opt}
+                                    </button>
+                                );
+                            })}
+                        </div>
+                        {errors.gender && <p className="error-text">{errors.gender}</p>}
+                    </div>
+                    <div>
+                        <label className={labelBase}>
+                            Are you over 18?<span className="text-orange-500"> *</span>
+                        </label>
+                        <div className="flex gap-4">
+                            {["Yes", "No"].map((opt) => {
+                                const sel = formData.is18 === opt;
+                                return (
+                                    <button
+                                        key={opt}
+                                        type="button"
+                                        onClick={() => setFormData((p) => ({ ...p, is18: opt }))}
+                                        className={optionBtn(sel)}
+                                    >
+                                        {opt}
+                                    </button>
+                                );
+                            })}
+                        </div>
+                        {errors.is18 && <p className="error-text">{errors.is18}</p>}
+                    </div>
                 </div>
-            </div>
-            <div className="flex justify-end mt-4">
-                <button
-                    type="button"
-                    onClick={() => {
-                        if (validateStep(1)) setStep(2);
-                    }}
-                    className={ctaBtn}
-                >
-                    Next
-                </button>
+                <div className="flex justify-end mt-4">
+                    <button
+                        type="button"
+                        onClick={() => {
+                            if (validateStep(1)) setStep(2);
+                        }}
+                        className={ctaBtn}
+                    >
+                        Next
+                    </button>
+                </div>
             </div>
         </div>
     );
 
     const StepTwo = () => (
         <div className="grid grid-cols-1 gap-6">
-            <div className={`${stepTitleBase} text-left`}>{stepTitles[2]}</div>
+            <div className="text-6xl sm:text-8xl md:text-8xl font-extrabold mb-6">
+                What's Your{" "}
+                <span className="relative inline-block">
+                    Idea
+                    <span className="absolute -top-2 -right-8 text-xl sm:text-2xl md:text-3xl font-bold text-orange-500">
+                        2/4
+                    </span>
+                </span>
+            </div>
             <div>
                 <label className={labelBase}>Describe your tattoo idea<span className="text-orange-500"> *</span></label>
                 <textarea
@@ -281,7 +289,7 @@ function TattooBookingForm() {
                             }}
                             disabled={formData.references.length >= 4}
                         />
-                        <img src="image.svg" alt="Upload" className="w-12 h-12 invert sepia saturate-200 hue-rotate-180" />
+                        <img src="/src/assets/images/image.svg" alt="Upload" className="w-12 h-12 invert sepia saturate-200 hue-rotate-180" />
                     </label>
 
                     <div className="text-xs text-[#868686]">
@@ -344,7 +352,15 @@ function TattooBookingForm() {
     const StepThree = () => (
         <div>
             <div className="mb-4">
-                <div className={`${stepTitleBase} text-left`}>{stepTitles[3]}</div>
+                <div className="text-6xl sm:text-8xl md:text-8xl font-extrabold mb-6">
+                    Perfect{" "}
+                    <span className="relative inline-block">
+                        Spot
+                        <span className="absolute -top-2 -right-8 text-xl sm:text-2xl md:text-3xl font-bold text-orange-500">
+                            3/4
+                        </span>
+                    </span>
+                </div>
                 <label className={labelBase}>Primary Body Part<span className="text-orange-500"> *</span></label>
                 <div className="grid grid-cols-2 gap-2">
                     {Object.keys(bodyPartOptions).map((part) => {
@@ -410,7 +426,15 @@ function TattooBookingForm() {
 
     const StepFour = () => (
         <div className="grid grid-cols-1 gap-6">
-            <div className={`${stepTitleBase} text-left`}>{stepTitles[4]}</div>
+            <div className="text-6xl sm:text-8xl md:text-8xl font-extrabold mb-6">
+                Contact{" "}
+                <span className="relative inline-block">
+                    Details
+                    <span className="absolute -top-2 -right-8 text-xl sm:text-2xl md:text-3xl font-bold text-orange-500">
+                        4/4
+                    </span>
+                </span>
+            </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-6">
                 <div>
                     <label className={labelBase}>What's your email?<span className="text-orange-500"> *</span></label>
@@ -540,8 +564,8 @@ function TattooBookingForm() {
     };
 
     return (
-        <div className="tattoo-form flex flex-col min-h-screen md:min-h-0">
-            <div className="flex flex-col md:flex-row flex-1 w-full mt-8 py-8 px-6 sm:py-8 sm:px-6 md:py-8 md:px-20 ">
+        <div className="tattoo-form flex flex-col md:min-h-0">
+            <div className="flex flex-col md:flex-row flex-1 w-full mt-8 py-8 px-6 sm:py-8 sm:px-6 md:py-8 md:px-20">
                 <div className="hidden md:flex w-full md:w-1/2 flex-col">
                     <div className="text-xs font-medium mb-2 text-[#f0efed]/[0.4]">
                         [Step {step} / 4]
@@ -556,14 +580,8 @@ function TattooBookingForm() {
                     </div>
                 </div>
             </div>
-            <div className="w-full bg-[#3c3c3c] h-0.5">
-                <div
-                    style={{ width: `${progress}%` }}
-                    className="h-0.5 bg-orange-500 transition-all duration-300"
-                />
-            </div>
         </div>
     );
 }
 
-ReactDOM.createRoot(document.getElementById("root")).render(<TattooBookingForm />);
+window.TattooBookingForm = TattooBookingForm;

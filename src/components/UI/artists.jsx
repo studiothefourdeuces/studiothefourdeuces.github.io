@@ -2,13 +2,13 @@ const Artists = () => {
     const [viewMode, setViewMode] = React.useState("line"); // "line" | "grid"
 
     const artists = [
-        { name: "Max", role: "Co-Founder", instagram: "https://www.instagram.com/maxxonk_tattoo/", styles: [{ name: "Chicano" }, { name: "Realism" }, { name: "Neo-Traditional" }], image: "/images/max.png", works: ["/images/works/max1.jpg", "/images/works/max2.jpg", "/images/works/max3.jpg", "/images/works/max4.jpg"] },
-        { name: "Eugene", role: "Co-Founder", instagram: "https://www.instagram.com/novohatskytattoo/", styles: [{ name: "Chicano" }, { name: "Realism" }, { name: "Neo-Traditional" }], image: "/images/eugene.png", works: ["/images/works/eugene1.jpg", "/images/works/eugene2.jpg", "/images/works/eugene3.jpg", "/images/works/eugene4.jpg"] },
-        { name: "Daria", role: "Resident Artist", instagram: "https://www.instagram.com/tattoo.daria/", styles: [{ name: "Watercolour" }, { name: "Fine Line" }, { name: "Abstract" }], image: "/images/daria.png", works: ["/images/works/daria1.jpg", "/images/works/daria2.jpg", "/images/works/daria3.jpg", "/images/works/daria4.jpg"] },
-        { name: "Aleksei", role: "Resident Artist", instagram: "https://www.instagram.com/pan.tattooist/", styles: [{ name: "Abstract" }, { name: "Conceptual Art" }, { name: "Geometric" }], image: "/images/aleksei.png", works: ["/images/works/aleksei1.jpg", "/images/works/aleksei2.jpg", "/images/works/aleksei3.jpg", "/images/works/aleksei4.jpg"] },
-        { name: "Olha", role: "Resident Artist", instagram: "https://www.instagram.com/tattoogalinskaya/", styles: [{ name: "Blackwork" }, { name: "Abstract" }, { name: "Botanical" }], image: "/images/olha.png", works: ["/images/works/olha1.jpg", "/images/works/olha2.jpg", "/images/works/olha3.jpg", "/images/works/olha4.jpg"] },
-        { name: "Selçuk", role: "Resident Artist", instagram: "https://www.instagram.com/selcukozger.ink/", styles: [{ name: "Minimal" }, { name: "Fine Line" }, { name: "Botanical" }], image: "/images/selcuk.png", works: ["/images/works/selcuk1.jpg", "/images/works/selcuk2.jpg", "/images/works/selcuk3.jpg", "/images/works/selcuk4.jpg"] },
-        { name: "Mila", role: "Resident Artist", instagram: "https://www.instagram.com/mila.delger/", styles: [{ name: "Freehand" }, { name: "Fine Line" }, { name: "Abstract" }], image: "/images/mila.png", works: ["/images/works/mila1.jpg", "/images/works/mila2.jpg", "/images/works/mila3.jpg", "/images/works/mila4.jpg"] },
+        { name: "Max", role: "Co-Founder", instagram: "https://www.instagram.com/maxxonk_tattoo/", styles: [{ name: "Chicano" }, { name: "Realism" }, { name: "Neo-Traditional" }], image: "/src/assets/images/max.png", works: ["/src/assets/images/works/max1.jpg", "/src/assets/images/works/max2.jpg", "/src/assets/images/works/max3.jpg", "/src/assets/images/works/max4.jpg"] },
+        { name: "Eugene", role: "Co-Founder", instagram: "https://www.instagram.com/novohatskytattoo/", styles: [{ name: "Chicano" }, { name: "Realism" }, { name: "Neo-Traditional" }], image: "/src/assets/images/eugene.png", works: ["/src/assets/images/works/eugene1.jpg", "/src/assets/images/works/eugene2.jpg", "/src/assets/images/works/eugene3.jpg", "/src/assets/images/works/eugene4.jpg"] },
+        { name: "Daria", role: "Resident Artist", instagram: "https://www.instagram.com/tattoo.daria/", styles: [{ name: "Watercolour" }, { name: "Fine Line" }, { name: "Abstract" }], image: "/src/assets/images/daria.png", works: ["/src/assets/images/works/daria1.jpg", "/src/assets/images/works/daria2.jpg", "/src/assets/images/works/daria3.jpg", "/src/assets/images/works/daria4.jpg"] },
+        { name: "Aleksei", role: "Resident Artist", instagram: "https://www.instagram.com/pan.tattooist/", styles: [{ name: "Abstract" }, { name: "Conceptual Art" }, { name: "Geometric" }], image: "/src/assets/images/aleksei.png", works: ["/src/assets/images/works/aleksei1.jpg", "/src/assets/images/works/aleksei2.jpg", "/src/assets/images/works/aleksei3.jpg", "/src/assets/images/works/aleksei4.jpg"] },
+        { name: "Olha", role: "Resident Artist", instagram: "https://www.instagram.com/tattoogalinskaya/", styles: [{ name: "Blackwork" }, { name: "Abstract" }, { name: "Botanical" }], image: "/src/assets/images/olha.png", works: ["/src/assets/images/works/olha1.jpg", "/src/assets/images/works/olha2.jpg", "/src/assets/images/works/olha3.jpg", "/src/assets/images/works/olha4.jpg"] },
+        { name: "Selçuk", role: "Resident Artist", instagram: "https://www.instagram.com/selcukozger.ink/", styles: [{ name: "Minimal" }, { name: "Fine Line" }, { name: "Botanical" }], image: "/src/assets/images/selcuk.png", works: ["/src/assets/images/works/selcuk1.jpg", "/src/assets/images/works/selcuk2.jpg", "/src/assets/images/works/selcuk3.jpg", "/src/assets/images/works/selcuk4.jpg"] },
+        { name: "Mila", role: "Resident Artist", instagram: "https://www.instagram.com/mila.delger/", styles: [{ name: "Freehand" }, { name: "Fine Line" }, { name: "Abstract" }], image: "/src/assets/images/mila.png", works: ["/src/assets/images/works/mila1.jpg", "/src/assets/images/works/mila2.jpg", "/src/assets/images/works/mila3.jpg", "/src/assets/images/works/mila4.jpg"] },
     ];
 
     const tattooStyles = [
@@ -27,28 +27,33 @@ const Artists = () => {
     ];
 
     const ctaBtn =
-        "px-5 py-3 rounded-xs border border-[#3c3c3c] text-[#868686] text-xs bg-transparent font-thin uppercase transition hover:border-[#ffffff] hover:text-[#ffffff]";
+        "px-5 py-3 rounded-xs border border-[#3c3c3c] bg-transparent text-base md:text-[0.9rem] font-thin uppercase transition hover:border-[#ffffff] hover:text-[#ffffff]";
 
     return (
         <div className="artists-panels">
             <div className="artists-panel active p-6 sm:p-6 md:p-20">
                 <div className="w-full mt-8">
-                    <div className="text-6xl sm:text-8xl md:text-8xl font-extrabold mb-6">
-                        Artists
+                    <div className="relative inline-block mb-6">
+                        <div className="text-6xl sm:text-8xl md:text-8xl font-extrabold">
+                            Artists
+                        </div>
+                        <span className="absolute -top-2 -right-4 text-xl sm:text-2xl md:text-3xl font-bold text-orange-500">
+                            7
+                        </span>
                     </div>
 
                     {/* Intro text + buttons */}
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-8">
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 md:w-1/2 gap-6 text-xs font-light">
+                        <div className="grid grid-cols-1 md:grid-cols-2 md:w-1/2 gap-6 text-base md:text-[0.9rem] font-thin">
                             <div>
-                                <h3 className="font-medium mb-2 text-[#f0efed]/[0.4]">[Our Story]</h3>
+                                <h3 className="text-[#f0efed]/[0.4]">[Our Story]</h3>
                                 <p>
                                     Our artists are more than tattooers — they’re storytellers.
                                 </p>
                             </div>
                             <div>
-                                <h3 className="font-medium mb-2 text-[#f0efed]/[0.4]">[Our Approach]</h3>
+                                <h3 className="text-[#f0efed]/[0.4]">[Our Approach]</h3>
                                 <p>
                                     Each member of our team brings a unique style, creative vision, and years of experience to ensure every piece of art is as individual as the person wearing it.
                                 </p>
@@ -58,7 +63,7 @@ const Artists = () => {
                         <div className="flex gap-4 shrink-0 flex flex-wrap justyfy-end">
                             <button
                                 onClick={() => setViewMode("line")}
-                                className={`px-5 py-3 text-xs uppercase border ${viewMode === "line"
+                                className={`px-5 py-3 text-base md:text-[0.9rem] font-thin uppercase border ${viewMode === "line"
                                     ? "bg-black text-white"
                                     : "border-[#3c3c3c] text-[#868686]"
                                     }`}
@@ -67,7 +72,7 @@ const Artists = () => {
                             </button>
                             <button
                                 onClick={() => setViewMode("grid")}
-                                className={`px-5 py-3 text-xs uppercase border ${viewMode === "grid"
+                                className={`px-5 py-3 text-base md:text-[0.9rem] font-thin uppercase border ${viewMode === "grid"
                                     ? "bg-black text-white"
                                     : "border-[#3c3c3c] text-[#868686]"
                                     }`}
@@ -84,7 +89,7 @@ const Artists = () => {
                         {artists.map((artist, idx) => (
                             <div
                                 key={idx}
-                                className="artist-card flex-shrink-0 w-72 sm:w-80 md:w-96 snap-start flex flex-col p-4"
+                                className="card flex-shrink-0 w-72 sm:w-80 md:w-96 snap-start flex flex-col p-4"
                             >
                                 <div className="relative w-full h-96 mb-4 artist-image-wrapper">
                                     <img
@@ -103,7 +108,7 @@ const Artists = () => {
                                     {artist.styles.map((style, i) => (
                                         <span
                                             key={i}
-                                            className="text-xs font-thin uppercase whitespace-nowrap text-[#f0efed]/[0.4]"
+                                            className="text-base md:text-xs font-thin uppercase whitespace-nowrap text-[#f0efed]/[0.4]"
                                         >
                                             {style.name}
                                             {i < artist.styles.length - 1 && ", "}
@@ -152,7 +157,7 @@ const Artists = () => {
                                         {artist.styles.map((style, i) => (
                                             <span
                                                 key={i}
-                                                className="text-xs font-thin uppercase whitespace-nowrap text-[#f0efed]/[0.4]"
+                                                className="text-base md:text-xs font-thin uppercase whitespace-nowrap text-[#f0efed]/[0.4]"
                                             >
                                                 {style.name}
                                                 {i < artist.styles.length - 1 && ", "}
@@ -199,19 +204,6 @@ const Artists = () => {
                         ))}
                     </div>
                 )}
-            </div>
-
-            {/* Running Line / Ticker */}
-            <div className="w-full overflow-hidden bg-[#cacaca] mb-6">
-                <div className="flex animate-marquee whitespace-nowrap items-center">
-                    {tattooStyles.concat(tattooStyles).map((style, index) => (
-                        <React.Fragment key={index}>
-                            <span className="mx-4 text-[#010101] font-thin uppercase text-sm">
-                                {style}
-                            </span>
-                        </React.Fragment>
-                    ))}
-                </div>
             </div>
         </div>
     );
