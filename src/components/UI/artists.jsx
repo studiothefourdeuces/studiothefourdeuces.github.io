@@ -30,7 +30,7 @@ const Artists = () => {
         "px-5 py-3 rounded-xs border border-[#3c3c3c] bg-transparent text-base md:text-[0.9rem] font-thin uppercase transition hover:border-[#ffffff] hover:text-[#ffffff]";
 
     return (
-        <div className="artists-panels">
+        <div id="artists" className="artists-panels">
             <div className="artists-panel active p-6 sm:p-6 md:p-20">
                 <div className="w-full mt-8">
                     <div className="relative inline-block mb-6">

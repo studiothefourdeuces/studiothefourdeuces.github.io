@@ -7,10 +7,9 @@ const Header = () => {
     const [open, setOpen] = useState(false);
 
     const menuItems = [
-        { name: "[Home]", href: "#" },
-        { name: "[Partners]", href: "#partners" },
-        { name: "[Artists]", href: "#artists" },
-        { name: "[Reviews]", href: "#reviews" },
+        { name: "[Our Partners]", href: "#about" },
+        { name: "[Team of Artists]", href: "#artists" },
+        { name: "[Customer Reviews]", href: "#reviews" },
     ];
 
     return (
@@ -23,6 +22,11 @@ const Header = () => {
                             key={item.name}
                             href={item.href}
                             className="hover:text-orange-500 transition"
+                            onClick={(e) => {
+                                e.preventDefault(); // prevent default anchor jump
+                                const el = document.querySelector(item.href); // find element by ID
+                                if (el) el.scrollIntoView({ behavior: "smooth" });
+                            }}
                         >
                             {item.name}
                         </a>
@@ -62,10 +66,13 @@ const Header = () => {
                     <div className="flex flex-col gap-4 flex-wrap justify-center mt-6 w-full">
                         <div className="text-base text-[#f0efed]/[0.4]">[Schedule a Visit]</div>
                         <a
-                            href="https://g.page/r/CRhrBvXgDpG6EAE/review"
-                            target="_blank"
-                            rel="noopener noreferrer"
+                            href="#book"
                             className={`${ctaBtn} relative pr-8 group overflow-hidden`}
+                            onClick={(e) => {
+                                e.preventDefault(); // prevent default anchor behavior
+                                const formEl = document.getElementById("book");
+                                if (formEl) formEl.scrollIntoView({ behavior: "smooth" });
+                            }}
                         >
                             Book Experience
                             <img
@@ -74,11 +81,12 @@ const Header = () => {
                                 className="absolute top-1 right-1 w-4 h-4 duration-300 opacity-60 group-hover:opacity-100"
                             />
                         </a>
+
                     </div>
                     <div className="flex flex-col gap-4 flex-wrap justify-center mt-6 w-full">
                         <div className="text-base text-[#f0efed]/[0.4]">[Contact via Email]</div>
                         <a
-                            href="https://g.page/r/CRhrBvXgDpG6EAE/review"
+                            href="emailto:studio@thefourdeuces.nl"
                             target="_blank"
                             rel="noopener noreferrer"
                             className={`${ctaBtn} relative pr-8 group overflow-hidden`}

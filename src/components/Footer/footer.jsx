@@ -94,19 +94,34 @@ function Footer() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-40 mb-12 border-b border-[#3c3c3c] pb-6">
                 {/* First div stays full width on mobile */}
                 <div className="flex flex-col gap-4 md:col-span-1">
-                    <button className={`${ctaBtn} relative group overflow-hidden`}>Back to top</button>
+                    <a
+                        href="#home"
+                        className={`${ctaBtn} relative group overflow-hidden`}
+                        onClick={(e) => {
+                            e.preventDefault(); // prevent default anchor behavior
+                            const formEl = document.getElementById("home");
+                            if (formEl) formEl.scrollIntoView({ behavior: "smooth" });
+                        }}
+                    >
+                        Back to top
+                        <img
+                            src="/arrow-top.svg"
+                            alt="arrow"
+                            className="absolute top-1 right-1 w-4 h-4 duration-300 opacity-60 group-hover:opacity-100"
+                        />
+                    </a>
                 </div>
 
                 {/* Second div */}
                 <div className="flex flex-col gap-4 col-span-1 md:col-span-1">
                     <h3 className="text-base md:text-[0.9rem]">[Collaboration]</h3>
-                    <button className={navBtn}>studio@thefourdeuces.nl</button>
+                    <button className={navBtn} href="emailto:studio@thefourdeuces.nl" target="_blank" rel="noopener noreferrer">studio@thefourdeuces.nl</button>
                 </div>
 
                 {/* Third div */}
                 <div className="flex flex-col gap-4 col-span-1 md:col-span-1">
                     <h3 className="text-base md:text-[0.9rem]">[Booking]</h3>
-                    <button className={navBtn}>booking@thefourdeuces.nl</button>
+                    <button className={navBtn} href="emailto:booking@thefourdeuces.nl" target="_blank" rel="noopener noreferrer">booking@thefourdeuces.nl</button>
                 </div>
             </div>
 

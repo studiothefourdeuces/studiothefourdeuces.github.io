@@ -13,7 +13,7 @@ const About = () => {
     ];
 
     return (
-        <div className="about-panels p-6 md:p-20 text-base md:text-[0.9rem] font-light">
+        <div id="about" className="about-panels p-6 md:p-20 text-base md:text-[0.9rem] font-light">
             {/* Top */}
             <div className="flex flex-col items-end mb-6 gap-4">
                 <div className="relative text-right">

@@ -4,45 +4,45 @@ const ctaBtn =
     "px-5 py-3 rounded-xs border border-[#3c3c3c] bg-transparent text-base md:text-[0.9rem] font-thin uppercase transition hover:border-[#ffffff] hover:text-[#ffffff]";
 
 const TypingText = ({ items, speed = 150, pause = 1000 }) => {
-  const [text, setText] = useState("");
-  const [index, setIndex] = useState(0); // which word
-  const [subIndex, setSubIndex] = useState(0); // which character
-  const [deleting, setDeleting] = useState(false);
+    const [text, setText] = useState("");
+    const [index, setIndex] = useState(0); // which word
+    const [subIndex, setSubIndex] = useState(0); // which character
+    const [deleting, setDeleting] = useState(false);
 
-  useEffect(() => {
-    const currentWord = items[index % items.length];
-    let timeout;
+    useEffect(() => {
+        const currentWord = items[index % items.length];
+        let timeout;
 
-    if (!deleting && subIndex <= currentWord.length) {
-      // Typing
-      timeout = setTimeout(() => {
-        setText(currentWord.substring(0, subIndex));
-        setSubIndex(subIndex + 1);
-      }, speed);
-    } else if (deleting && subIndex >= 0) {
-      // Deleting
-      timeout = setTimeout(() => {
-        setText(currentWord.substring(0, subIndex));
-        setSubIndex(subIndex - 1);
-      }, speed);
-    }
+        if (!deleting && subIndex <= currentWord.length) {
+            // Typing
+            timeout = setTimeout(() => {
+                setText(currentWord.substring(0, subIndex));
+                setSubIndex(subIndex + 1);
+            }, speed);
+        } else if (deleting && subIndex >= 0) {
+            // Deleting
+            timeout = setTimeout(() => {
+                setText(currentWord.substring(0, subIndex));
+                setSubIndex(subIndex - 1);
+            }, speed);
+        }
 
-    // Pause at end before deleting
-    if (!deleting && subIndex === currentWord.length + 1) {
-      timeout = setTimeout(() => setDeleting(true), pause);
-    }
+        // Pause at end before deleting
+        if (!deleting && subIndex === currentWord.length + 1) {
+            timeout = setTimeout(() => setDeleting(true), pause);
+        }
 
-    // Move to next word after deleting
-    if (deleting && subIndex === -1) {
-      setDeleting(false);
-      setIndex((prev) => (prev + 1) % items.length);
-      setSubIndex(0);
-    }
+        // Move to next word after deleting
+        if (deleting && subIndex === -1) {
+            setDeleting(false);
+            setIndex((prev) => (prev + 1) % items.length);
+            setSubIndex(0);
+        }
 
-    return () => clearTimeout(timeout);
-  }, [subIndex, deleting, index, items, speed, pause]);
+        return () => clearTimeout(timeout);
+    }, [subIndex, deleting, index, items, speed, pause]);
 
-  return <span className="text-[#CC751B]">{text}</span>;
+    return <span className="text-[#CC751B]">{text}</span>;
 };
 
 const Card = () => {
@@ -68,7 +68,7 @@ const Card = () => {
 const Hero = () => {
 
     return (
-        <div className="about-panels p-6 md:p-20 font-thin text-sm md:text-base h-screen">
+        <div id="home" className="about-panels p-6 md:p-20 font-thin text-sm md:text-base h-screen">
             {/* Top corners */}
             <div className="flex justify-between mb-12">
                 <div className="text-xs text-[#f0efed]/[0.4]">[The Four Deuces]</div>
@@ -107,10 +107,13 @@ const Hero = () => {
 
                     <div className="flex gap-4 flex-wrap justify-center mt-6">
                         <a
-                            href="https://g.page/r/CRhrBvXgDpG6EAE/review"
-                            target="_blank"
-                            rel="noopener noreferrer"
+                            href="#book"
                             className={`${ctaBtn} relative pr-8 group overflow-hidden`}
+                            onClick={(e) => {
+                                e.preventDefault(); // prevent default anchor behavior
+                                const formEl = document.getElementById("book");
+                                if (formEl) formEl.scrollIntoView({ behavior: "smooth" });
+                            }}
                         >
                             Book Experience
                             <img
