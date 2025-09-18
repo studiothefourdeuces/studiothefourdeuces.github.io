@@ -1,3 +1,5 @@
+const { useState, useRef, useEffect } = React;
+
 const ctaBtn =
     "px-5 py-3 rounded-xs border border-[#3c3c3c] bg-transparent text-base md:text-[0.9rem] font-thin uppercase transition hover:border-[#ffffff] hover:text-[#ffffff]";
 
