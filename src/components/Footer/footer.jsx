@@ -1,4 +1,9 @@
+const { useState, useRef, useEffect } = React;
+
 function Footer() {
+    const footerRef = useRef(null);
+    const [visible, setVisible] = useState(false);
+
     const ctaBtn =
         "px-5 py-3 rounded-xs border border-[#3c3c3c] bg-transparent text-base md:text-[0.9rem] font-thin uppercase transition hover:border-[#ffffff] hover:text-[#ffffff]";
 
@@ -7,14 +12,29 @@ function Footer() {
 
     const address = "Van Baerlestraat 126 H, 1071 BD Amsterdam, Netherlands";
     const googleMapsLink = "https://maps.app.goo.gl/FtpEaaMod7Q8KDMr7";
-
     const currentYear = new Date().getFullYear();
 
-    return (
-        <footer className="p-6 sm:p-6 md:p-20">
+    // IntersectionObserver for scroll-in animation
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) setVisible(true);
+            },
+            { threshold: 0.2 }
+        );
+        if (footerRef.current) observer.observe(footerRef.current);
+        return () => observer.disconnect();
+    }, []);
 
+    return (
+        <footer ref={footerRef} className="p-6 sm:p-6 md:p-20">
             {/* Row 1 */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-40 mb-12">
+            <div
+                className={`grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-40 mb-12 transition-all duration-700 ease-out transform ${
+                    visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                }`}
+                style={{ transitionDelay: "0s" }}
+            >
                 <div className="flex flex-col gap-4 md:col-span-1">
                     <h3 className="text-base md:text-[0.9rem]">The Four Deuces</h3>
                     <p className="text-base md:text-[0.9rem] text-[#f0efed]/[0.4]">KVK: 88925161</p>
@@ -62,7 +82,12 @@ function Footer() {
             </div>
 
             {/* Row 2 */}
-            <div className="grid grid-cols-2 gap-12 md:gap-40 md:grid-cols-3 mb-12">
+            <div
+                className={`grid grid-cols-2 gap-12 md:gap-40 md:grid-cols-3 mb-12 transition-all duration-700 ease-out transform ${
+                    visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                }`}
+                style={{ transitionDelay: "0.2s" }}
+            >
                 <div className="flex flex-col gap-4">
                     <h3 className="text-base md:text-[0.9rem]">[Clients]</h3>
                     <button className={navBtn}>Artists</button>
@@ -91,14 +116,18 @@ function Footer() {
             </div>
 
             {/* Row 3 */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-40 mb-12 border-b border-[#3c3c3c] pb-6">
-                {/* First div stays full width on mobile */}
+            <div
+                className={`grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-40 mb-12 border-b border-[#3c3c3c] pb-6 transition-all duration-700 ease-out transform ${
+                    visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                }`}
+                style={{ transitionDelay: "0.4s" }}
+            >
                 <div className="flex flex-col gap-4 md:col-span-1">
                     <a
                         href="#home"
                         className={`${ctaBtn} relative group overflow-hidden`}
                         onClick={(e) => {
-                            e.preventDefault(); // prevent default anchor behavior
+                            e.preventDefault();
                             const formEl = document.getElementById("home");
                             if (formEl) formEl.scrollIntoView({ behavior: "smooth" });
                         }}
@@ -112,25 +141,29 @@ function Footer() {
                     </a>
                 </div>
 
-                {/* Second div */}
                 <div className="flex flex-col gap-4 col-span-1 md:col-span-1">
                     <h3 className="text-base md:text-[0.9rem]">[Collaboration]</h3>
-                    <button className={navBtn} href="emailto:studio@thefourdeuces.nl" target="_blank" rel="noopener noreferrer">studio@thefourdeuces.nl</button>
+                    <button className={navBtn}>studio@thefourdeuces.nl</button>
                 </div>
 
-                {/* Third div */}
                 <div className="flex flex-col gap-4 col-span-1 md:col-span-1">
                     <h3 className="text-base md:text-[0.9rem]">[Booking]</h3>
-                    <button className={navBtn} href="emailto:booking@thefourdeuces.nl" target="_blank" rel="noopener noreferrer">booking@thefourdeuces.nl</button>
+                    <button className={navBtn}>booking@thefourdeuces.nl</button>
                 </div>
             </div>
 
             {/* Credits */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 pb-6 text-[#868686]">
+            <div
+                className={`flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 pb-6 text-[#868686] transition-all duration-700 ease-out transform ${
+                    visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                }`}
+                style={{ transitionDelay: "0.6s" }}
+            >
                 <div className="text-xs">© {currentYear} All rights reserved</div>
                 <div className="hidden sm:block text-xs">•</div>
                 <div className="text-xs flex items-center gap-1">
-                    Desinged & crafted by <a className={navBtn} href="https://aerdt.xyz/" target="_blank" rel="noopener noreferrer">
+                    Designed & crafted by{" "}
+                    <a className={navBtn} href="https://aerdt.xyz/" target="_blank" rel="noopener noreferrer">
                         Artem Erdt
                     </a>
                 </div>

@@ -5,8 +5,8 @@ const ctaBtn =
 
 const TypingText = ({ items, speed = 150, pause = 1000 }) => {
     const [text, setText] = useState("");
-    const [index, setIndex] = useState(0); // which word
-    const [subIndex, setSubIndex] = useState(0); // which character
+    const [index, setIndex] = useState(0);
+    const [subIndex, setSubIndex] = useState(0);
     const [deleting, setDeleting] = useState(false);
 
     useEffect(() => {
@@ -14,25 +14,21 @@ const TypingText = ({ items, speed = 150, pause = 1000 }) => {
         let timeout;
 
         if (!deleting && subIndex <= currentWord.length) {
-            // Typing
             timeout = setTimeout(() => {
                 setText(currentWord.substring(0, subIndex));
                 setSubIndex(subIndex + 1);
             }, speed);
         } else if (deleting && subIndex >= 0) {
-            // Deleting
             timeout = setTimeout(() => {
                 setText(currentWord.substring(0, subIndex));
                 setSubIndex(subIndex - 1);
             }, speed);
         }
 
-        // Pause at end before deleting
         if (!deleting && subIndex === currentWord.length + 1) {
             timeout = setTimeout(() => setDeleting(true), pause);
         }
 
-        // Move to next word after deleting
         if (deleting && subIndex === -1) {
             setDeleting(false);
             setIndex((prev) => (prev + 1) % items.length);
@@ -46,13 +42,11 @@ const TypingText = ({ items, speed = 150, pause = 1000 }) => {
 };
 
 const Card = () => {
-    // use a plain path string instead of `import`
     const logo = "./src/assets/images/logo-tfd.png";
 
     return (
-        <div className="container noselect">
+        <div className="container noselect animate-float">
             <div className="canvas">
-                {/* generate 25 trackers dynamically */}
                 {Array.from({ length: 25 }).map((_, i) => (
                     <div key={i} className={`tracker tr-${i + 1}`} />
                 ))}
@@ -66,24 +60,49 @@ const Card = () => {
 };
 
 const Hero = () => {
+    const heroRef = useRef(null);
+    const [visible, setVisible] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) setVisible(true);
+            },
+            { threshold: 0.2 }
+        );
+        if (heroRef.current) observer.observe(heroRef.current);
+        return () => observer.disconnect();
+    }, []);
 
     return (
-        <div id="home" className="about-panels p-6 md:p-20 font-thin text-sm md:text-base h-screen">
+        <div
+            id="home"
+            ref={heroRef}
+            className="about-panels p-6 md:p-20 font-thin text-sm md:text-base h-screen"
+        >
             {/* Top corners */}
-            <div className="flex justify-between mb-12">
+            <div
+                className={`flex justify-between mb-12 transition-all duration-700 ease-out transform ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                    }`}
+                style={{ transitionDelay: "0s" }}
+            >
                 <div className="text-xs text-[#f0efed]/[0.4]">[The Four Deuces]</div>
-                <div className="text-[#CC751B]">Scroll Down</div>
+                <div className="text-[#CC751B]">/ Established in 2023</div>
             </div>
 
             {/* Middle section */}
-            <div className="flex flex-col justify-center items-center h-[80%]">
+            <div
+                className={`flex flex-col justify-center items-center h-[80%] transition-all duration-700 ease-out transform ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                    }`}
+                style={{ transitionDelay: "0.2s" }}
+            >
                 <div className="w-full md:w-1/3 flex flex-col items-center p-6">
                     <div className="w-full">
                         <Card />
                     </div>
 
-                    <p className="mb-4 text-center">
-                        We are a passionate team of tattoo artists that specialize in{" "}
+                    <p className="mb-4 text-center animate-float">
+                        We are a passionate team of artists that specialize in{" "}
                         <TypingText
                             items={[
                                 "[Chicano]",
@@ -110,7 +129,7 @@ const Hero = () => {
                             href="#book"
                             className={`${ctaBtn} relative pr-8 group overflow-hidden`}
                             onClick={(e) => {
-                                e.preventDefault(); // prevent default anchor behavior
+                                e.preventDefault();
                                 const formEl = document.getElementById("book");
                                 if (formEl) formEl.scrollIntoView({ behavior: "smooth" });
                             }}
@@ -126,20 +145,23 @@ const Hero = () => {
                 </div>
             </div>
 
-
-
             {/* Bottom section */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                {/* Bottom left - established */}
-                <div className="text-[#CC751B]">/ Established in 2023</div>
+            <div
+                className={`grid grid-cols-1 md:grid-cols-2 gap-12 items-center transition-all duration-700 ease-out transform ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                    }`}
+                style={{ transitionDelay: "0.4s" }}
+            >
+                {/* Bottom left - Scroll Down */}
+                <div className="text-[#CC751B] text-center md:text-left w-full animate-zoom">
+                    Scroll Down
+                </div>
 
-                {/* Bottom right - text and button */}
-                <div className="flex flex-col items-start md:items-end text-xs">
-                    <p className="mb-4">
-                        Amsterdam, Netherlands
-                    </p>
+                {/* Bottom right - Amsterdam */}
+                <div className="flex flex-col items-center md:items-end text-xs w-full">
+                    <p className="mb-4 text-center md:text-right">Amsterdam, Netherlands</p>
                 </div>
             </div>
+
         </div>
     );
 };

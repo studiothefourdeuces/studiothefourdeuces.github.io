@@ -1,62 +1,79 @@
+const { useRef, useState, useEffect } = React;
+
 const FloatingReviews = () => {
+    const reviewsRef = useRef(null);
+    const [visible, setVisible] = useState(false);
+
+    // IntersectionObserver to trigger animation
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) setVisible(true);
+            },
+            { threshold: 0.2 }
+        );
+        if (reviewsRef.current) observer.observe(reviewsRef.current);
+        return () => observer.disconnect();
+    }, []);
+
     const reviews = [
         {
-            text: "I recently had a tattoo done at the Four Deuces, and it was a good experience overall. The artists were skilled, professional, and attentive to my requests. The studio was clean and well-maintained, creating a comfortable environment. I'm happy with the quality of my tattoo and would recommend this salon to others. Big thanks to the discount made and the post treatment. Kudos to Max and team.",
+            text: "I recently had a tattoo at The Four Deuces and had a great experience. The artists were skilled, professional, and attentive. The studio is clean and comfortable. I'm very happy with my tattoo and highly recommend this studio. Big thanks to Max and the team for the excellent service.",
             author: "Iurii Cherniavskyi",
             rating: 5,
         },
         {
-            text: "Ik denk dat dit over het algemeen de beste tattooshop van Amsterdam is, een hele grote salon, gezellig, uitstekende artiesten, ik weet ook nog dat de koffie erg lekker is👍🏻👍🏻👍🏻",
+            text: "This is by far one of the best tattoo studios in Amsterdam! The salon is spacious, welcoming, and the artists are amazing. The coffee is also excellent 👍🏻👍🏻👍🏻. I had a fantastic experience and will definitely return.",
             author: "Nikita Van",
             rating: 5,
         },
         {
-            text: "Ik had een geweldige ervaring bij The Four Deuces! Het personeel was vriendelijk en professioneel, en de hygiëne was top. Mijn tatoeëerder luisterde goed naar mijn wensen en leverde prachtig werk af. Ik ben super tevreden met het eindresultaat en zal zeker terugkomen voor mijn volgende tattoo. Sterk aanbevolen!",
+            text: "I had an amazing experience at The Four Deuces! The staff was friendly and professional, and the hygiene was perfect. My tattoo artist listened carefully to my ideas and delivered exceptional work. I am extremely satisfied and will return for future tattoos.",
             author: "Thomas Moran",
             rating: 5,
         },
         {
-            text: "Wat een top shop !!! Doen wat ze zeggen en nemen de tijd om alles helemaal goed uit te werken. Ik ben geholpen door eugene en wat een vak man is dat hij streeft naar perfectie en dat is wat je wilt bij een tattoo hij luisterd naar je idee en denk ontzettend goed mee over hoe het het mooiste uitkomt. Ik als zeer tevreden klant raad iedereen deze shop aan dikke verdiende 5 sterren",
+            text: "Top-notch studio! They take the time to do everything perfectly. Eugene helped me and is a true professional, striving for perfection in every detail. I am a very satisfied customer and highly recommend this studio. Well-deserved 5 stars!",
             author: "Tim van Toorn",
             rating: 5,
         },
         {
-            text: "Best tattoo shop in Amsterdam – incredibly talented artists and just all around great vibes!",
+            text: "The best tattoo studio in Amsterdam – talented artists and an amazing vibe! I felt very welcome and the quality of the work exceeded my expectations. Highly recommended to anyone looking for a great tattoo experience.",
             author: "Rogier Broekhuis",
             rating: 5,
         },
         {
-            text: "Best place in Amsterdam to get tattooed",
+            text: "A wonderful place to get tattooed in Amsterdam. The artists are skilled, professional, and create a comfortable environment. I had an excellent experience and will definitely return.",
             author: "Monsieur Düsseltal",
             rating: 5,
         },
         {
-            text: "Ik heb mijn eerste tattoo hier laten zetten vandaag door Daria, en alles was perfect. Ze heeft zo veel moeite gestoken in mijn design, totdat het precies was wat ik in gedachten had. Verder was ze ongelofelijk lief en behulpzaam. Ze communiceerde goed en haar werk is geweldig. Ik ben ongelofelijk blij met het eindresultaat. Ontzettend bedankt ❤️❤️❤️",
+            text: "I got my first tattoo here today by Daria and everything was perfect. She worked tirelessly on my design until it was exactly what I wanted. She is incredibly kind and professional ❤️❤️❤️. The result exceeded all my expectations!",
             author: "Nigella",
             rating: 5,
         },
         {
-            text: "Max is a master who I am ready to travel all over the world to. I had several of his tattoos from Kyiv and came here. He is a wonderful, sincere, cool person and a real pro. It's a pity that I don't get tattoos so often, I would go to this studio as if it were my job. Cozy, clean, spacious. I came for Christmas and the studio had an extra magical vibe. Thank you for everything.",
+            text: "Max is a master tattoo artist. I’ve traveled for his work from Kyiv and always receive excellent results. The studio is cozy, clean, and spacious, with a magical atmosphere. Max is professional, talented, and a truly wonderful person.",
             author: "Y H",
             rating: 5,
         },
         {
-            text: "Super goede shop! Werd goed geholpen en werd goed gekeken naar wat jij precies wilde! Schets werd gemaakt naar hoe jij het zelf wil met tips van de artiest zelf! Ik had Max en heb al een halve sleeve af door hem en ben zeker van plan om deze ook af te maken bij Max!",
+            text: "Fantastic studio! I was well assisted and my wishes were fully understood. The sketches are made with care, and Max’s guidance ensured the best result. I’ve already completed half a sleeve and plan to finish it here. Highly recommended!",
             author: "Renzo de Punder",
             rating: 5,
         },
         {
-            text: "Today I got a tattoo from tattoo artist Daria. Everything from the idea to the final result is top notch, plus a subtle sense of taste, the ability to hear the client and embody the idea in an ideal form. She works carefully, confidently and with great love for her work.",
+            text: "I had a tattoo done by Daria. From the initial idea to the final result, everything was perfect. She works with great care and listens carefully to ensure the tattoo matches the client’s vision. Highly professional and talented.",
             author: "Valentina Sviatoha",
             rating: 5,
         },
         {
-            text: "I want to thank you Alexei @pan.tattooist for the amazing Ayrton Senna tattoo. From the first contact to the final moment, everything was smooth and professional.",
-            author: "vinicio pastre",
+            text: "I want to thank Alexei @pan.tattooist for the incredible Ayrton Senna tattoo. From the first contact to the final moment, everything was smooth, professional, and enjoyable. Truly exceptional service.",
+            author: "Vinicio Pastre",
             rating: 5,
         },
         {
-            text: "Alexei is a perfectionist and true artist. 10/10 great vibes, nice shop.",
+            text: "Alexei is a perfectionist and a true artist. The studio has a great vibe, the staff is friendly, and the work is outstanding. I give 10/10 for both the atmosphere and the quality of the tattoos.",
             author: "Justin Frederickson",
             rating: 5,
         },
@@ -66,10 +83,18 @@ const FloatingReviews = () => {
         "px-5 py-3 rounded-xs border border-[#3c3c3c] bg-transparent text-base md:text-[0.9rem] font-thin uppercase transition hover:border-[#ffffff] hover:text-[#ffffff]";
 
     return (
-        <div id="reviews" className="reviews-panel active">
+        <div
+            id="reviews"
+            ref={reviewsRef}
+            className="reviews-panel active"
+        >
             <div className="w-full mt-8 p-6 sm:p-6 md:p-20">
-                {/* Heading */}
-                <div className="relative inline-block mb-6">
+                {/* Section Heading */}
+                <div
+                    className={`relative inline-block mb-6 transition-all duration-700 ease-out transform ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                        }`}
+                    style={{ transitionDelay: "0s" }}
+                >
                     <div className="text-6xl sm:text-8xl md:text-8xl font-extrabold">
                         Reviews
                     </div>
@@ -78,10 +103,12 @@ const FloatingReviews = () => {
                     </span>
                 </div>
 
-                {/* Intro text */}
-
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-8">
-
+                {/* Intro Text & CTA */}
+                <div
+                    className={`flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-8 transition-all duration-700 ease-out transform ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                        }`}
+                    style={{ transitionDelay: "0.2s" }}
+                >
                     <div className="grid grid-cols-1 md:grid-cols-2 md:w-1/2 gap-6 text-base md:text-[0.9rem] font-thin">
                         <div>
                             <h3 className="text-[#f0efed]/[0.4]">[Our Clients]</h3>
@@ -99,7 +126,7 @@ const FloatingReviews = () => {
                         </div>
                     </div>
 
-                    <div className="flex gap-4 flex flex-wrap justyfy-end">
+                    <div className="flex gap-4 flex flex-wrap justify-end">
                         <a
                             href="https://g.page/r/CRhrBvXgDpG6EAE/review"
                             target="_blank"
@@ -118,7 +145,11 @@ const FloatingReviews = () => {
             </div>
 
             {/* Floating/scrolling reviews */}
-            <div className="w-full relative mt-12 pt-4 cursor-grab overflow-x-auto scrollbar-hide">
+            <div
+                className={`w-full relative mt-12 pt-4 cursor-grab overflow-x-auto scrollbar-hide transition-all duration-700 ease-out transform ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                    }`}
+                style={{ transitionDelay: "0.4s" }}
+            >
                 <div className="flex gap-6 min-h-[300px] items-stretch animate-marquee hover:pause-animation">
                     {reviews.concat(reviews).map((review, idx) => (
                         <div
@@ -144,7 +175,6 @@ const FloatingReviews = () => {
                     ))}
                 </div>
             </div>
-
         </div>
     );
 };

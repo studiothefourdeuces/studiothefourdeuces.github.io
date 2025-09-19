@@ -23,8 +23,8 @@ const Header = () => {
                             href={item.href}
                             className="hover:text-orange-500 transition"
                             onClick={(e) => {
-                                e.preventDefault(); // prevent default anchor jump
-                                const el = document.querySelector(item.href); // find element by ID
+                                e.preventDefault();
+                                const el = document.querySelector(item.href);
                                 if (el) el.scrollIntoView({ behavior: "smooth" });
                             }}
                         >
@@ -33,7 +33,7 @@ const Header = () => {
                     ))}
                 </nav>
 
-                {/* Mobile Button */}
+                {/* Mobile Menu Toggle Button */}
                 <button
                     className="md:hidden fixed right-6 top-4 text-white z-50"
                     onClick={() => setOpen(!open)}
@@ -48,59 +48,83 @@ const Header = () => {
             </div>
 
             {/* Mobile Fullscreen Menu */}
-            {open && (
-                <div className="px-20 fixed inset-0 bg-black/[0.4] backdrop-blur-sm flex flex-col items-center justify-center gap-8 font-thin text-lg uppercase uppercase z-40">
-                    {/* Main Menu Links */}
-                    {menuItems.map((item) => (
-                        <a
-                            key={item.name}
-                            href={item.href}
-                            className="hover:text-orange-500 transition"
-                            onClick={() => setOpen(false)}
-                        >
-                            {item.name}
-                        </a>
-                    ))}
+            <div
+                className={`fixed inset-0 bg-black/[0.4] backdrop-blur-sm flex flex-col items-center justify-center gap-8 font-thin text-lg uppercase z-40 p-6 transition-all duration-500 ease-in-out transform ${open
+                        ? "opacity-100 scale-100 pointer-events-auto"
+                        : "opacity-0 scale-95 pointer-events-none"
+                    }`}
+            >
+                {/* Mobile Home Button */}
+                <a
+                    href="#home"
+                    className="md:hidden hover:text-orange-500 transition text-2xl"
+                    onClick={(e) => {
+                        e.preventDefault();
+                        const homeEl = document.getElementById("home");
+                        if (homeEl) homeEl.scrollIntoView({ behavior: "smooth" });
+                        setOpen(false);
+                    }}
+                >
+                    [Home]
+                </a>
 
-                    {/* Extra CTAs */}
-                    <div className="flex flex-col gap-4 flex-wrap justify-center mt-6 w-full">
-                        <div className="text-base text-[#f0efed]/[0.4]">[Schedule a Visit]</div>
-                        <a
-                            href="#book"
-                            className={`${ctaBtn} relative pr-8 group overflow-hidden`}
-                            onClick={(e) => {
-                                e.preventDefault(); // prevent default anchor behavior
-                                const formEl = document.getElementById("book");
-                                if (formEl) formEl.scrollIntoView({ behavior: "smooth" });
-                            }}
-                        >
-                            Book Experience
-                            <img
-                                src="/arrow-top.svg"
-                                alt="arrow"
-                                className="absolute top-1 right-1 w-4 h-4 duration-300 opacity-60 group-hover:opacity-100"
-                            />
-                        </a>
+                {/* Main Menu Links */}
+                {menuItems.map((item) => (
+                    <a
+                        key={item.name}
+                        href={item.href}
+                        className="hover:text-orange-500 transition text-2xl"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            const el = document.querySelector(item.href);
+                            if (el) el.scrollIntoView({ behavior: "smooth" });
+                            setOpen(false);
+                        }}
+                    >
+                        {item.name}
+                    </a>
+                ))}
 
-                    </div>
-                    <div className="flex flex-col gap-4 flex-wrap justify-center mt-6 w-full">
-                        <div className="text-base text-[#f0efed]/[0.4]">[Contact via Email]</div>
-                        <a
-                            href="emailto:studio@thefourdeuces.nl"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={`${ctaBtn} relative pr-8 group overflow-hidden`}
-                        >
-                            Contact
-                            <img
-                                src="/arrow-top.svg"
-                                alt="arrow"
-                                className="absolute top-1 right-1 w-4 h-4 duration-300 opacity-60 group-hover:opacity-100"
-                            />
-                        </a>
-                    </div>
+                {/* Extra CTAs */}
+                <div className="flex flex-col gap-4 flex-wrap justify-center mt-6 w-full">
+                    <div className="text-base text-[#f0efed]/[0.4]">[Schedule a Visit]</div>
+                    <a
+                        href="#book"
+                        className={`${ctaBtn} relative pr-8 group overflow-hidden`}
+                        onClick={(e) => {
+                            e.preventDefault();
+                            const formEl = document.getElementById("book");
+                            if (formEl) formEl.scrollIntoView({ behavior: "smooth" });
+                            setOpen(false);
+                        }}
+                    >
+                        Book Experience
+                        <img
+                            src="/arrow-top.svg"
+                            alt="arrow"
+                            className="absolute top-1 right-1 w-4 h-4 duration-300 opacity-60 group-hover:opacity-100"
+                        />
+                    </a>
                 </div>
-            )}
+
+                <div className="flex flex-col gap-4 flex-wrap justify-center mt-6 w-full">
+                    <div className="text-base text-[#f0efed]/[0.4]">[Contact via Email]</div>
+                    <a
+                        href="emailto:studio@thefourdeuces.nl"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`${ctaBtn} relative pr-8 group overflow-hidden`}
+                    >
+                        Contact
+                        <img
+                            src="/arrow-top.svg"
+                            alt="arrow"
+                            className="absolute top-1 right-1 w-4 h-4 duration-300 opacity-60 group-hover:opacity-100"
+                        />
+                    </a>
+                </div>
+            </div>
+
         </header>
     );
 };

@@ -23,6 +23,7 @@
     "@babel/preset-react": "^7.27.1"
   },
   "dependencies": {
-    "@react-google-maps/api": "^2.20.7"
+    "@react-google-maps/api": "^2.20.7",
+    "framer-motion": "^12.23.16"
   }
 }

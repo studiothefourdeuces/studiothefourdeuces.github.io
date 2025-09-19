@@ -2,6 +2,8 @@ const { useState, useRef, useEffect } = React;
 
 function TattooBookingForm() {
     const [step, setStep] = useState(1);
+    const [visible, setVisible] = useState(false);
+    const formRef = useRef(null);
     const [formData, setFormData] = useState({
         fullName: "",
         location: "",
@@ -21,6 +23,18 @@ function TattooBookingForm() {
         agreeTerms: "",
         confirmInfo: "",
     });
+
+    // IntersectionObserver for scroll-in
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) setVisible(true);
+            },
+            { threshold: 0.2 }
+        );
+        if (formRef.current) observer.observe(formRef.current);
+        return () => observer.disconnect();
+    }, []);
 
     const bodyPartOptions = {
         Arm: [
@@ -564,24 +578,43 @@ function TattooBookingForm() {
     };
 
     return (
-        <div id="book" className="tattoo-form flex flex-col md:min-h-0">
-            <div className="flex flex-col md:flex-row flex-1 w-full mt-8 py-8 px-6 sm:py-8 sm:px-6 md:py-8 md:px-20">
-                <div className="hidden md:flex w-full md:w-1/2 flex-col">
-                    <div className="text-xs font-medium mb-2 text-[#f0efed]/[0.4]">
-                        [Step {step} / 4]
-                    </div>
-                </div>
+    <div
+        id="book"
+        ref={formRef}
+        className="tattoo-form flex flex-col md:min-h-0"
+    >
+        <div className="flex flex-col md:flex-row flex-1 w-full mt-8 py-8 px-6 sm:py-8 sm:px-6 md:py-8 md:px-20">
 
-                <div className="w-full md:w-1/2 mt-8">
-                    <div className="w-full">
-                        <div className="form-panels" aria-live="polite">
-                            <div className="form-panel active">{renderers[step]()}</div>
-                        </div>
+            {/* Section Title */}
+            <div
+                className={`hidden md:flex w-full md:w-1/2 flex-col transition-all duration-700 ease-out transform ${
+                    visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                }`}
+                style={{ transitionDelay: "0s" }}
+            >
+                <div className="text-xs font-medium mb-2 text-[#f0efed]/[0.4]">
+                    [Step {step} / 4]
+                </div>
+            </div>
+
+            {/* Form Content */}
+            <div
+                className={`w-full md:w-1/2 mt-8 transition-all duration-700 ease-out transform ${
+                    visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                }`}
+                style={{ transitionDelay: "0.2s" }}
+            >
+                <div className="w-full">
+                    <div className="form-panels" aria-live="polite">
+                        <div className="form-panel active">{renderers[step]()}</div>
                     </div>
                 </div>
             </div>
+
         </div>
-    );
+    </div>
+);
+
 }
 
 window.TattooBookingForm = TattooBookingForm;
