@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms and Conditions | The Four Deuces</title>
+
+  <!-- React and ReactDOM -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+  <!-- Babel -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./styles.css" />
+
+  <!-- Remix Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+
+  <!-- Header -->
+  <div id="header-root"></div>
+
+  <!-- Terms content -->
+  <div id="terms-root" class="mt-20"></div>
+
+  <!-- Load Header -->
+  <script type="text/babel" src="./src/components/Header/header.jsx"></script>
+
+  <!-- Load Terms page -->
+  <script type="text/babel" src="./src/pages/terms.jsx"></script>
+
+  <script type="text/babel">
+    const { StrictMode } = React;
+    const { createRoot } = ReactDOM;
+
+    // Render Header
+    createRoot(document.getElementById("header-root")).render(
+      <StrictMode>
+        <Header />
+      </StrictMode>
+    );
+
+    // Render Terms
+    createRoot(document.getElementById("terms-root")).render(
+      <StrictMode>
+        <Terms />
+      </StrictMode>
+    );
+  </script>
+</body>
+</html>

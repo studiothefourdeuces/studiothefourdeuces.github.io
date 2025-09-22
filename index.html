@@ -26,24 +26,24 @@
 <body class="bg-gray-50">
     <div id="root"></div>
 
-    <!-- Framer Motion first -->
+    <!-- Framer Motion -->
     <script src="https://cdn.jsdelivr.net/npm/framer-motion@10.16.4/dist/framer-motion.umd.min.js"></script>
     <script>
         window.motion = window.FramerMotion.motion;
     </script>
 
-    <!-- JSX files loaded via Babel (map.jsx BEFORE footer.jsx) -->
+    <!-- JSX Components -->
     <script type="text/babel" src="./src/components/Header/header.jsx"></script>
     <script type="text/babel" src="./src/components/UI/hero.jsx"></script>
     <script type="text/babel" src="./src/components/UI/about.jsx"></script>
     <script type="text/babel" src="./src/components/UI/artists.jsx"></script>
-    <script type="text/babel" src="./src/components/UI/form.jsx"></script>
+    <script type="text/babel" src="./src/components/UI/form.jsx"></script> <!-- teaser version -->
     <script type="text/babel" src="./src/components/UI/reviews.jsx"></script>
     <script type="text/babel" src="./src/components/Footer/footer.jsx"></script>
     <script type="text/babel" src="./main.jsx"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCw4ErXhC0C4CyoBgejvSvP6IzbJVlt6Yk" async
-        defer></script>
 
+    <!-- Google Maps (for footer) -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCw4ErXhC0C4CyoBgejvSvP6IzbJVlt6Yk" async defer></script>
 </body>
 
 </html>

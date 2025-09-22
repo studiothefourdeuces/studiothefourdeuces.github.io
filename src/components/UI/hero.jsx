@@ -126,13 +126,8 @@ const Hero = () => {
 
                     <div className="flex gap-4 flex-wrap justify-center mt-6">
                         <a
-                            href="#book"
+                            href="/book.html"
                             className={`${ctaBtn} relative pr-8 group overflow-hidden`}
-                            onClick={(e) => {
-                                e.preventDefault();
-                                const formEl = document.getElementById("book");
-                                if (formEl) formEl.scrollIntoView({ behavior: "smooth" });
-                            }}
                         >
                             Book Experience
                             <img

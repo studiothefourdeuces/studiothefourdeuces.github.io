@@ -2,47 +2,36 @@ const { StrictMode } = React;
 const { createRoot } = ReactDOM;
 
 function App() {
-    const Header = window.Header;             // defined in hero.jsx
-    const Hero = window.Hero;             // defined in hero.jsx
-    const About = window.About;             // defined in about.jsx
-    const Form = window.TattooBookingForm;   // defined in form.jsx
-    const ArtistSection = window.Artists;    // defined in artists.jsx
-    const FloatingReviews = window.FloatingReviews;     // defined in reviews.jsx
-    const Footer = window.Footer;            // defined in footer.jsx
+    const Header = window.Header;
+    const Hero = window.Hero;
+    const About = window.About;
+    const ArtistSection = window.Artists;
+    const FloatingReviews = window.FloatingReviews;
+    const Footer = window.Footer;
+    const Form = window.TattooBookingForm; // teaser version with button
 
     return (
         <div className="w-full min-h-screen flex flex-col">
-            {/* Hero */}
-            <section>
-                <Header />
-            </section>
-            {/* Hero */}
-            <section>
-                <Hero />
-            </section>
+            {/* Header */}
+            <Header />
+
+            {/* Hero Section */}
+            <Hero />
+
             {/* About Section */}
-            <section>
-                <About />
-            </section>
+            <About />
+
             {/* Artists Section */}
-            <section>
-                <ArtistSection />
-            </section>
+            <ArtistSection />
 
-            {/* Booking Form */}
-            <section>
-                <Form />
-            </section>
+            {/* Booking teaser */}
+            <Form />
 
-             {/* Floating Reviews */}
-            <section>
-                <FloatingReviews />
-            </section>
+            {/* Floating Reviews */}
+            <FloatingReviews />
 
-            {/* Footer with Map */}
-            <footer>
-                <Footer />
-            </footer>
+            {/* Footer */}
+            <Footer />
         </div>
     );
 }

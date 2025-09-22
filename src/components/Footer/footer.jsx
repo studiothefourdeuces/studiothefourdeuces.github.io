@@ -30,9 +30,8 @@ function Footer() {
         <footer ref={footerRef} className="p-6 sm:p-6 md:p-20">
             {/* Row 1 */}
             <div
-                className={`grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-40 mb-12 transition-all duration-700 ease-out transform ${
-                    visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                }`}
+                className={`grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-40 mb-12 transition-all duration-700 ease-out transform ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                    }`}
                 style={{ transitionDelay: "0s" }}
             >
                 <div className="flex flex-col gap-4 md:col-span-1">
@@ -83,9 +82,8 @@ function Footer() {
 
             {/* Row 2 */}
             <div
-                className={`grid grid-cols-2 gap-12 md:gap-40 md:grid-cols-3 mb-12 transition-all duration-700 ease-out transform ${
-                    visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                }`}
+                className={`grid grid-cols-2 gap-12 md:gap-40 md:grid-cols-3 mb-12 transition-all duration-700 ease-out transform ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                    }`}
                 style={{ transitionDelay: "0.2s" }}
             >
                 <div className="flex flex-col gap-4">
@@ -93,7 +91,6 @@ function Footer() {
                     <button className={navBtn}>Artists</button>
                     <button className={navBtn}>Aftercare</button>
                     <button className={navBtn}>Preparation</button>
-                    <button className={navBtn}>FAQ</button>
                 </div>
 
                 <div className="flex flex-col gap-4">
@@ -101,25 +98,26 @@ function Footer() {
                     <button className={navBtn}>Residents</button>
                     <button className={navBtn}>Guests</button>
                     <button className={navBtn}>Facilities</button>
-                    <button className={navBtn}>FAQ</button>
                 </div>
 
                 <div className="flex flex-col gap-4 col-span-2 md:col-span-1">
                     <h3 className="text-base md:text-[0.9rem]">[Terms]</h3>
-                    <button className={navBtn}>
-                        Terms and Conditions<span className="text-[10px] text-white ml-1">(English)</span>
-                    </button>
-                    <button className={navBtn}>
-                        Terms and Conditions<span className="text-[10px] text-white ml-1">(Dutch)</span>
-                    </button>
+                    <a
+                        href="/terms.html"
+                        className={navBtn}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Terms and Conditions
+                    </a>
+                    <button className={navBtn}>FAQ</button>
                 </div>
             </div>
 
             {/* Row 3 */}
             <div
-                className={`grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-40 mb-12 border-b border-[#3c3c3c] pb-6 transition-all duration-700 ease-out transform ${
-                    visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                }`}
+                className={`grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-40 mb-12 border-b border-[#3c3c3c] pb-6 transition-all duration-700 ease-out transform ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                    }`}
                 style={{ transitionDelay: "0.4s" }}
             >
                 <div className="flex flex-col gap-4 md:col-span-1">
@@ -154,9 +152,8 @@ function Footer() {
 
             {/* Credits */}
             <div
-                className={`flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 pb-6 text-[#868686] transition-all duration-700 ease-out transform ${
-                    visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                }`}
+                className={`flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 pb-6 text-[#868686] transition-all duration-700 ease-out transform ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                    }`}
                 style={{ transitionDelay: "0.6s" }}
             >
                 <div className="text-xs">© {currentYear} All rights reserved</div>
