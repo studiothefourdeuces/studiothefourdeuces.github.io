@@ -105,8 +105,6 @@ function Footer() {
                     <a
                         href="/terms.html"
                         className={navBtn}
-                        target="_blank"
-                        rel="noopener noreferrer"
                     >
                         Terms and Conditions
                     </a>
