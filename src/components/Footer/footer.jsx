@@ -46,7 +46,7 @@ function Footer() {
                     >
                         Google Maps
                         <img
-                            src="/arrow-top.svg"
+                            src="/src/assets/images/svg/arrow-top.svg"
                             alt="arrow"
                             className="absolute top-1 right-1 w-4 h-4 duration-300 opacity-60 group-hover:opacity-100"
                         />
@@ -60,7 +60,7 @@ function Footer() {
                     >
                         Instagram
                         <img
-                            src="/arrow-top.svg"
+                            src="/src/assets/images/svg/arrow-top.svg"
                             alt="arrow"
                             className="absolute top-1 right-1 w-4 h-4 duration-300 opacity-60 group-hover:opacity-100"
                         />
@@ -132,7 +132,7 @@ function Footer() {
                     >
                         Back to top
                         <img
-                            src="/arrow-top.svg"
+                            src="/src/assets/images/svg/arrow-top.svg"
                             alt="arrow"
                             className="absolute top-1 right-1 w-4 h-4 duration-300 opacity-60 group-hover:opacity-100"
                         />

@@ -94,7 +94,7 @@ const FloatingReviews = () => {
                         >
                             Leave a Review
                             <img
-                                src="/arrow-top.svg"
+                                src="/src/assets/images/svg/arrow-top.svg"
                                 alt="arrow"
                                 className="absolute top-1 right-1 w-4 h-4 duration-300 opacity-60 group-hover:opacity-100"
                             />
@@ -106,13 +106,13 @@ const FloatingReviews = () => {
                                 onClick={() => scroll("left")}
                                 className="w-10 h-10 flex items-center justify-center border border-[#3c3c3c] rounded-full hover:border-white transition"
                             >
-                                <img src="/arrow-left.svg" alt="Previous" className="w-4 h-4" />
+                                <img src="/src/assets/images/svg/arrow-left.svg" alt="Previous" className="w-4 h-4" />
                             </button>
                             <button
                                 onClick={() => scroll("right")}
                                 className="w-10 h-10 flex items-center justify-center border border-[#3c3c3c] rounded-full hover:border-white transition"
                             >
-                                <img src="/arrow-right.svg" alt="Next" className="w-4 h-4" />
+                                <img src="/src/assets/images/svg/arrow-right.svg" alt="Next" className="w-4 h-4" />
                             </button>
                         </div>
                     </div>

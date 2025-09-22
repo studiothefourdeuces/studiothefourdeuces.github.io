@@ -116,13 +116,13 @@ const Artists = () => {
                     onClick={scrollLeft}
                     className="w-10 h-10 flex items-center justify-center border border-[#3c3c3c] rounded-full hover:border-white transition"
                   >
-                    <img src="/arrow-left.svg" alt="Previous" className="w-4 h-4" />
+                    <img src="/src/assets/images/svg/arrow-right.svg" alt="Previous" className="w-4 h-4" />
                   </button>
                   <button
                     onClick={scrollRight}
                     className="w-10 h-10 flex items-center justify-center border border-[#3c3c3c] rounded-full hover:border-white transition"
                   >
-                    <img src="/arrow-right.svg" alt="Next" className="w-4 h-4" />
+                    <img src="/src/assets/images/svg/arrow-right.svg" alt="Next" className="w-4 h-4" />
                   </button>
                 </div>
               )}
@@ -179,7 +179,7 @@ const Artists = () => {
                   >
                     Instagram
                     <img
-                      src="/arrow-top.svg"
+                      src="/src/assets/images/svg/arrow-top.svg"
                       alt="arrow"
                       className="absolute top-1 right-1 w-4 h-4 duration-300 opacity-60 group-hover:opacity-100"
                     />
@@ -227,7 +227,7 @@ const Artists = () => {
                     >
                       Instagram
                       <img
-                        src="/arrow-top.svg"
+                        src="/src/assets/images/svg/arrow-top.svg"
                         alt="arrow"
                         className="absolute top-1 right-1 w-4 h-4 duration-300 opacity-60 group-hover:opacity-100"
                       />
