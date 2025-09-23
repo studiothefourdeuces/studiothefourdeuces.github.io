@@ -36,9 +36,9 @@ function Terms() {
           <>
             <h3 className="text-[#f0efed]/[0.8] mt-2 p-4">[1. Introduction]</h3>
             <p>
-              Welcome to <span className="text-orange-500">The Four Deuces B.V.</span> (<span className="text-orange-500">"Studio"</span>). These terms and conditions (<span className="text-orange-500">"Terms"</span>)
-              apply to all clients (<span className="text-orange-500">"Client"</span> and <span className="text-orange-500">"Clients"</span>) receiving services from the Studio
-              offered by resident and/or guesting artists (<span className="text-orange-500">"Artists"</span> or <span className="text-orange-500">"Artists"</span>). By scheduling
+              Welcome to <span className="text-[#cc751b]">The Four Deuces B.V.</span> (<span className="text-[#cc751b]">"Studio"</span>). These terms and conditions (<span className="text-[#cc751b]">"Terms"</span>)
+              apply to all clients (<span className="text-[#cc751b]">"Client"</span> and <span className="text-[#cc751b]">"Clients"</span>) receiving services from the Studio
+              offered by resident and/or guesting artists (<span className="text-[#cc751b]">"Artists"</span> or <span className="text-[#cc751b]">"Artists"</span>). By scheduling
               an appointment or receiving services, you agree to be bound by these Terms.
             </p>
 
@@ -51,12 +51,12 @@ function Terms() {
               <p>
                 <strong>Email:</strong> <a
                   href="mailto:booking@thefourdeuces.nl"
-                  className="text-orange-500 underline hover:text-orange-600"
+                  className="text-[#cc751b] underline hover:text-orange-600"
                 >
                   booking@thefourdeuces.nl
                 </a> and <a
                   href="mailto:studio@thefourdeuces.nl"
-                  className="text-orange-500 underline hover:text-orange-600"
+                  className="text-[#cc751b] underline hover:text-orange-600"
                 >
                   studio@thefourdeuces.nl
                 </a>
@@ -65,7 +65,7 @@ function Terms() {
                   href="https://www.instagram.com/the.four.deuces/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-orange-500 underline hover:text-orange-600"
+                  className="text-[#cc751b] underline hover:text-orange-600"
                 >
                   @the.four.deuces
                 </a>
@@ -74,7 +74,7 @@ function Terms() {
                   href="https://www.thefourdeuces.nl/book.html/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-orange-500 underline hover:text-orange-600"
+                  className="text-[#cc751b] underline hover:text-orange-600"
                 >
                   www.thefourdeuces.nl/book
                 </a>
@@ -89,12 +89,12 @@ function Terms() {
                 appointment. The deposit will be applied to the final cost of the tattoo.
               </p>
               <p>
-                <strong>Rescheduling and Cancellations:</strong> Clients must provide <span className="text-orange-500">at least 48
+                <strong>Rescheduling and Cancellations:</strong> Clients must provide <span className="text-[#cc751b]">at least 48
                   hours' notice</span> to reschedule or cancel an appointment. Failure to do so will result
                 in the forfeiture of the deposit.
               </p>
               <p>
-                <strong>Late Arrivals:</strong> If a client arrive more than <span className="text-orange-500">30 minutes late
+                <strong>Late Arrivals:</strong> If a client arrive more than <span className="text-[#cc751b]">30 minutes late
                   without notifying</span> the artist or manager, the appointment may be rescheduled or
                 canceled, and the deposit may be forfeited.
               </p>
@@ -144,10 +144,10 @@ function Terms() {
             <div className="space-y-4">
               <p>
                 <strong>Age Requirement:</strong> We adhere to local regulations and laws,
-                therefore, you have to be <span className="text-orange-500">at least 18 years old</span> or accompanied by an adult.
+                therefore, you have to be <span className="text-[#cc751b]">at least 18 years old</span> or accompanied by an adult.
               </p>
               <p>
-                <strong>Health Disclosure:</strong> Clients <span className="text-orange-500">must</span> disclose any medical conditions,
+                <strong>Health Disclosure:</strong> Clients <span className="text-[#cc751b]">must</span> disclose any medical conditions,
                 allergies, or skin sensitivities prior to receiving a tattoo. Failure to disclose
                 information releases both the tattoo Artist and the Studio from any liability.
               </p>
@@ -156,7 +156,7 @@ function Terms() {
                   href="https://www.rivm.nl/hygienerichtlijnen/EU-norm-tatoeeren"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-orange-500 underline hover:text-orange-600"
+                  className="text-[#cc751b] underline hover:text-orange-600"
                 >
                   NEN-EN 17169
                 </a>) to ensure the safety of our clients and staff. All our artists are
@@ -202,7 +202,7 @@ function Terms() {
                   href="https://www.rivm.nl/hygienerichtlijnen/EU-norm-tatoeeren"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-orange-500 underline hover:text-orange-600"
+                  className="text-[#cc751b] underline hover:text-orange-600"
                 >
                   NEN-EN 17169
                 </a>), section 7.12. Clients are
@@ -230,7 +230,7 @@ function Terms() {
                 from any liability.
               </p>
               <p>
-                <strong>Agreement:</strong> Clients are <span className="text-orange-500">considered to have read and agreed to
+                <strong>Agreement:</strong> Clients are <span className="text-[#cc751b]">considered to have read and agreed to
                   these terms</span> upon making an appointment and/or receiving tattoo services.
               </p>
               <p>
@@ -252,7 +252,7 @@ function Terms() {
                 artist prior to the tattoo session.
               </p>
               <p>
-                <strong>Design Rights:</strong> The Studio <span className="text-orange-500">retains the rights to all custom
+                <strong>Design Rights:</strong> The Studio <span className="text-[#cc751b]">retains the rights to all custom
                   designs created by our artists</span>. Clients may not reproduce the design without
                 permission. Reproduction of the design without the consent of the Artist and/or
                 Studio will result in liability under the Dutch Copyright Law (Auteurswet).
@@ -269,7 +269,7 @@ function Terms() {
             <div className="space-y-4">
               <p>
                 <strong>Behavior:</strong> The Studio maintains a professional environment.
-                Inappropriate behavior, including harassment or discrimination, <span className="text-orange-500">will not be
+                Inappropriate behavior, including harassment or discrimination, <span className="text-[#cc751b]">will not be
                   tolerated and may result in refusal of service</span>.
               </p>
               <p>
@@ -354,7 +354,7 @@ function Terms() {
                 For any questions or concerns regarding these Terms, please contact us at&nbsp;
                 <a
                   href="mailto:studio@thefourdeuces.nl"
-                  className="text-orange-500 underline hover:text-orange-600"
+                  className="text-[#cc751b] underline hover:text-orange-600"
                 >
                   studio@thefourdeuces.nl
                 </a>.
@@ -366,9 +366,9 @@ function Terms() {
           <div className="text-[#868686]">
             <h3 className="text-[#f0efed]/[0.8] mt-2 p-4">[1. Inleiding]</h3>
             <p>
-              Welkom bij <span className="text-orange-500">The Four Deuces B.V.</span> (<span className="text-orange-500">"Studio"</span>). Deze algemene voorwaarden (<span className="text-orange-500">"Voorwaarden"</span>)
-              zijn van toepassing op alle klanten (<span className="text-orange-500">"Klant"</span> en <span className="text-orange-500">"Klanten"</span>) die diensten ontvangen van de Studio
-              aangeboden door resident en/of gastartiesten (<span className="text-orange-500">"Artiesten"</span>). Door een afspraak te maken of diensten te ontvangen, gaat u akkoord met deze Voorwaarden.
+              Welkom bij <span className="text-[#cc751b]">The Four Deuces B.V.</span> (<span className="text-[#cc751b]">"Studio"</span>). Deze algemene voorwaarden (<span className="text-[#cc751b]">"Voorwaarden"</span>)
+              zijn van toepassing op alle klanten (<span className="text-[#cc751b]">"Klant"</span> en <span className="text-[#cc751b]">"Klanten"</span>) die diensten ontvangen van de Studio
+              aangeboden door resident en/of gastartiesten (<span className="text-[#cc751b]">"Artiesten"</span>). Door een afspraak te maken of diensten te ontvangen, gaat u akkoord met deze Voorwaarden.
             </p>
 
             <h3 className="text-[#f0efed]/[0.8] mt-2 p-4">[2. Afspraken]</h3>
@@ -379,12 +379,12 @@ function Terms() {
               <p>
                 <strong>Email:</strong> <a
                   href="mailto:booking@thefourdeuces.nl"
-                  className="text-orange-500 underline hover:text-orange-600"
+                  className="text-[#cc751b] underline hover:text-orange-600"
                 >
                   booking@thefourdeuces.nl
                 </a> en <a
                   href="mailto:studio@thefourdeuces.nl"
-                  className="text-orange-500 underline hover:text-orange-600"
+                  className="text-[#cc751b] underline hover:text-orange-600"
                 >
                   studio@thefourdeuces.nl
                 </a>
@@ -393,7 +393,7 @@ function Terms() {
                   href="https://www.instagram.com/the.four.deuces/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-orange-500 underline hover:text-orange-600"
+                  className="text-[#cc751b] underline hover:text-orange-600"
                 >
                   @the.four.deuces
                 </a>
@@ -402,7 +402,7 @@ function Terms() {
                   href="https://www.thefourdeuces.nl/book.html/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-orange-500 underline hover:text-orange-600"
+                  className="text-[#cc751b] underline hover:text-orange-600"
                 >
                   www.thefourdeuces.nl/book
                 </a>
@@ -414,10 +414,10 @@ function Terms() {
                 <strong>Deposit:</strong> Een niet-restitueerbare aanbetaling is vereist om een afspraak vast te leggen. De aanbetaling wordt verrekend met de uiteindelijke kosten van de tattoo.
               </p>
               <p>
-                <strong>Wijzigingen en Annuleringen:</strong> Klanten moeten <span className="text-orange-500">minimaal 48 uur van tevoren</span> informeren bij het verzetten of annuleren van een afspraak. Niet naleven kan leiden tot verlies van de aanbetaling.
+                <strong>Wijzigingen en Annuleringen:</strong> Klanten moeten <span className="text-[#cc751b]">minimaal 48 uur van tevoren</span> informeren bij het verzetten of annuleren van een afspraak. Niet naleven kan leiden tot verlies van de aanbetaling.
               </p>
               <p>
-                <strong>Te Laat Komen:</strong> Als een klant meer dan <span className="text-orange-500">30 minuten te laat komt zonder dit te melden</span> aan de artiest of manager, kan de afspraak worden verzet of geannuleerd en kan de aanbetaling vervallen.
+                <strong>Te Laat Komen:</strong> Als een klant meer dan <span className="text-[#cc751b]">30 minuten te laat komt zonder dit te melden</span> aan de artiest of manager, kan de afspraak worden verzet of geannuleerd en kan de aanbetaling vervallen.
               </p>
             </div>
 
@@ -449,17 +449,17 @@ function Terms() {
             <h3 className="text-[#f0efed]/[0.8] mt-2 p-4">[4. Gezondheid en Veiligheid]</h3>
             <div className="space-y-4">
               <p>
-                <strong>Leeftijdsvereiste:</strong> We volgen lokale wetgeving; klanten moeten <span className="text-orange-500">minimaal 18 jaar oud</span> zijn of begeleid worden door een volwassene.
+                <strong>Leeftijdsvereiste:</strong> We volgen lokale wetgeving; klanten moeten <span className="text-[#cc751b]">minimaal 18 jaar oud</span> zijn of begeleid worden door een volwassene.
               </p>
               <p>
-                <strong>Gezondheidsinformatie:</strong> Klanten <span className="text-orange-500">moeten</span> eventuele medische aandoeningen, allergieën of huidgevoeligheden vooraf melden. Niet melden ontslaat zowel de artiest als de Studio van aansprakelijkheid.
+                <strong>Gezondheidsinformatie:</strong> Klanten <span className="text-[#cc751b]">moeten</span> eventuele medische aandoeningen, allergieën of huidgevoeligheden vooraf melden. Niet melden ontslaat zowel de artiest als de Studio van aansprakelijkheid.
               </p>
               <p>
                 <strong>Hygiëne:</strong> De Studio volgt strikte hygiëneprotocollen (<a
                   href="https://www.rivm.nl/hygienerichtlijnen/EU-norm-tatoeeren"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-orange-500 underline hover:text-orange-600"
+                  className="text-[#cc751b] underline hover:text-orange-600"
                 >
                   NEN-EN 17169
                 </a>) voor de veiligheid van klanten en personeel.
@@ -487,7 +487,7 @@ function Terms() {
                   href="https://www.rivm.nl/hygienerichtlijnen/EU-norm-tatoeeren"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-orange-500 underline hover:text-orange-600"
+                  className="text-[#cc751b] underline hover:text-orange-600"
                 >
                   NEN-EN 17169
                 </a>), sectie 7.12. Klanten zijn verantwoordelijk voor het volgen van deze instructies. Niet naleven ontslaat de artiest en de Studio van aansprakelijkheid.
@@ -503,7 +503,7 @@ function Terms() {
                 <strong>Verantwoordelijkheid Klant:</strong> Klanten erkennen de risico’s van tatoeëren, waaronder allergische reacties, infecties en ontevredenheid. Klanten moeten de artiest informeren over bekende gezondheidsproblemen. Niet melden ontslaat de artiest en Studio van aansprakelijkheid.
               </p>
               <p>
-                <strong>Overeenkomst:</strong> Klanten worden <span className="text-orange-500">geacht deze voorwaarden gelezen en geaccepteerd te hebben</span> bij het maken van een afspraak en/of ontvangen van diensten.
+                <strong>Overeenkomst:</strong> Klanten worden <span className="text-[#cc751b]">geacht deze voorwaarden gelezen en geaccepteerd te hebben</span> bij het maken van een afspraak en/of ontvangen van diensten.
               </p>
               <p>
                 <strong>Gezondheidsproblemen:</strong> De Studio is niet aansprakelijk voor gezondheidsproblemen of complicaties door het tatoeëren, inclusief infecties of allergische reacties.
@@ -519,7 +519,7 @@ function Terms() {
                 <strong>Fotografie:</strong> De Studio behoudt het recht om foto’s en video’s van tattoos te maken voor promotiedoeleinden. Klanten kunnen bezwaar maken door dit vooraf aan de artiest te melden.
               </p>
               <p>
-                <strong>Ontwerp Rechten:</strong> De Studio <span className="text-orange-500">behoudt alle rechten op maatwerk ontwerpen</span>. Klanten mogen ontwerpen niet reproduceren zonder toestemming. Overtreding kan leiden tot aansprakelijkheid volgens de Nederlandse Auteurswet.
+                <strong>Ontwerp Rechten:</strong> De Studio <span className="text-[#cc751b]">behoudt alle rechten op maatwerk ontwerpen</span>. Klanten mogen ontwerpen niet reproduceren zonder toestemming. Overtreding kan leiden tot aansprakelijkheid volgens de Nederlandse Auteurswet.
               </p>
               <p>
                 <strong>Intellectueel Eigendom:</strong> Artwork van de Studio blijft intellectueel eigendom van de Studio en mag niet commercieel worden gebruikt zonder expliciete toestemming. Ongeoorloofd gebruik leidt tot aansprakelijkheid volgens de Auteurswet.
@@ -529,7 +529,7 @@ function Terms() {
             <h3 className="text-[#f0efed]/[0.8] mt-2 p-4">[8. Gedrag]</h3>
             <div className="space-y-4">
               <p>
-                <strong>Gedrag:</strong> De Studio handhaaft een professionele omgeving. Ongepast gedrag, inclusief intimidatie of discriminatie, <span className="text-orange-500">wordt niet getolereerd en kan leiden tot weigering van dienst</span>.
+                <strong>Gedrag:</strong> De Studio handhaaft een professionele omgeving. Ongepast gedrag, inclusief intimidatie of discriminatie, <span className="text-[#cc751b]">wordt niet getolereerd en kan leiden tot weigering van dienst</span>.
               </p>
               <p>
                 <strong>Begeleiding:</strong> Vanwege ruimte en veiligheid moeten begeleiders op de begane grond blijven tijdens de sessie.
@@ -583,7 +583,7 @@ function Terms() {
                 Voor vragen of opmerkingen over deze Voorwaarden kunt u contact met ons opnemen via &nbsp;
                 <a
                   href="mailto:studio@thefourdeuces.nl"
-                  className="text-orange-500 underline hover:text-orange-600"
+                  className="text-[#cc751b] underline hover:text-orange-600"
                 >
                   studio@thefourdeuces.nl
                 </a>.

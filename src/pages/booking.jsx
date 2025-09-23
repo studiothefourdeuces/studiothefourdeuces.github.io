@@ -127,7 +127,7 @@ function BookingForm() {
     const inputBase = "p-4 w-full rounded-lg border border-transparent focus:outline-none placeholder:text-black/30 font-sans font-thin text-base md:text-lg";
     const labelBase = "mb-[5px] block font-thin leading-[140%]";
     const backBtn = "px-5 py-3 rounded-xs border border-[#3c3c3c] bg-transparent text-base md:text-[0.9rem] font-thin uppercase transition hover:border-[#ffffff] hover:text-[#ffffff]";
-    const ctaBtn = "rounded-lg px-5 py-3 border border-orange-500 text-orange-500 bg-transparent font-thin uppercase transition hover:bg-orange-500 hover:text-black";
+    const ctaBtn = "rounded-lg px-5 py-3 border border-[#CC751B] text-[#CC751B] bg-transparent font-thin uppercase transition hover:bg-[#CC751B] hover:text-black";
     const optionBtn = (isSelected = false, fullWidth = false) =>
         `rounded-lg px-5 py-3 ${fullWidth ? "w-full" : ""} font-thin uppercase transition ${isSelected ? "bg-transparent border border-white" : "bg-transparent border border-[#3c3c3c]"} flex justify-center`;
 
@@ -261,22 +261,22 @@ function BookingForm() {
         <div className="grid grid-cols-1 gap-6 relative">
             <div className="text-6xl sm:text-8xl md:text-8xl font-extrabold mb-6">
                 Request A <span className="relative inline-block">Tattoo
-                    <span className="absolute -top-2 -right-8 text-xl sm:text-2xl md:text-3xl font-bold text-orange-500">1/4</span>
+                    <span className="absolute -top-2 -right-8 text-xl sm:text-2xl md:text-3xl font-bold text-[#CC751B]">1/4</span>
                 </span>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                    <label className={labelBase}>What's your full name?<span className="text-orange-500"> *</span></label>
+                    <label className={labelBase}>What's your full name?<span className="text-[#CC751B]"> *</span></label>
                     <input className={inputBase} name="fullName" value={formData.fullName} onChange={handleChange} placeholder="JOHN DOE" />
                     {errors.fullName && <p className="error-text">{errors.fullName}</p>}
                 </div>
                 <div>
-                    <label className={labelBase}>Where are you located?<span className="text-orange-500"> *</span></label>
+                    <label className={labelBase}>Where are you located?<span className="text-[#CC751B]"> *</span></label>
                     <input className={inputBase} name="location" value={formData.location} onChange={handleChange} placeholder="AMSTERDAM, NETHERLANDS" />
                     {errors.location && <p className="error-text">{errors.location}</p>}
                 </div>
                 <div>
-                    <label className={labelBase}>What's your gender?<span className="text-orange-500"> *</span></label>
+                    <label className={labelBase}>What's your gender?<span className="text-[#CC751B]"> *</span></label>
                     <div className="flex gap-4">
                         {["Male", "Female", "Other"].map(opt => {
                             const sel = formData.gender === opt;
@@ -288,7 +288,7 @@ function BookingForm() {
                     {errors.gender && <p className="error-text">{errors.gender}</p>}
                 </div>
                 <div>
-                    <label className={labelBase}>Are you over 18?<span className="text-orange-500"> *</span></label>
+                    <label className={labelBase}>Are you over 18?<span className="text-[#CC751B]"> *</span></label>
                     <div className="flex gap-4">
                         {["Yes", "No"].map(opt => {
                             const sel = formData.is18 === opt;
@@ -310,17 +310,17 @@ function BookingForm() {
         <div className="grid grid-cols-1 gap-6">
             <div className="text-6xl sm:text-8xl md:text-8xl font-extrabold mb-6">
                 What's Your <span className="relative inline-block">Idea
-                    <span className="absolute -top-2 -right-8 text-xl sm:text-2xl md:text-3xl font-bold text-orange-500">2/4</span>
+                    <span className="absolute -top-2 -right-8 text-xl sm:text-2xl md:text-3xl font-bold text-[#CC751B]">2/4</span>
                 </span>
             </div>
             <div>
-                <label className={labelBase}>Describe your tattoo idea<span className="text-orange-500"> *</span></label>
+                <label className={labelBase}>Describe your tattoo idea<span className="text-[#CC751B]"> *</span></label>
                 <textarea className={inputBase} rows={4} name="idea" value={formData.idea} onChange={handleChange} placeholder="E.G. A REALISTIC STYLE LION TATTOO THAT CAPTURES EVERY DETAIL"></textarea>
                 {errors.idea && <p className="error-text">{errors.idea}</p>}
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                    <label className={labelBase}>Approximate Size in CM?<span className="text-orange-500"> *</span></label>
+                    <label className={labelBase}>Approximate Size in CM?<span className="text-[#CC751B]"> *</span></label>
                     <input className={inputBase} name="size" value={formData.size} onChange={handleChange} placeholder="E.G. 10X15" />
                     {errors.size && <p className="error-text">{errors.size}</p>}
                 </div>
@@ -330,7 +330,7 @@ function BookingForm() {
                 </div>
             </div>
             <div>
-                <label className={labelBase}>Upload reference images<span className="text-orange-500"> *</span></label>
+                <label className={labelBase}>Upload reference images<span className="text-[#cc751b]"> *</span></label>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <label className="upload-btn">
                         <input type="file" multiple className="hidden" onChange={(e) => handleCloudinaryFiles(Array.from(e.target.files))} disabled={formData.references.length >= 4} />
@@ -344,7 +344,7 @@ function BookingForm() {
                         {formData.references.map((file, index) => (
                             <div key={index} className="relative group border border-[#3c3c3c] rounded-lg overflow-hidden">
                                 <img src={file} alt={`preview-${index}`} className="w-full h-32 object-cover" />
-                                <button type="button" onClick={() => setFormData(p => ({ ...p, references: p.references.filter((_, i) => i !== index) }))} className="absolute top-1 right-1 !bg-orange-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm opacity-0 group-hover:opacity-100 transition">✕</button>
+                                <button type="button" onClick={() => setFormData(p => ({ ...p, references: p.references.filter((_, i) => i !== index) }))} className="absolute top-1 right-1 !bg-[#cc751b] text-white rounded-full w-6 h-6 flex items-center justify-center text-sm opacity-0 group-hover:opacity-100 transition">✕</button>
                             </div>
                         ))}
                     </div>
@@ -361,10 +361,10 @@ function BookingForm() {
         <div>
             <div className="text-6xl sm:text-8xl md:text-8xl font-extrabold mb-6">
                 Perfect <span className="relative inline-block">Spot
-                    <span className="absolute -top-2 -right-8 text-xl sm:text-2xl md:text-3xl font-bold text-orange-500">3/4</span>
+                    <span className="absolute -top-2 -right-8 text-xl sm:text-2xl md:text-3xl font-bold text-[#cc751b]">3/4</span>
                 </span>
             </div>
-            <label className={labelBase}>Primary Body Part<span className="text-orange-500"> *</span></label>
+            <label className={labelBase}>Primary Body Part<span className="text-[#cc751b]"> *</span></label>
             <div className="grid grid-cols-2 gap-2">
                 {Object.keys(bodyPartOptions).map(part => {
                     const selected = formData.bodyPart === part;
@@ -376,7 +376,7 @@ function BookingForm() {
             {errors.bodyPart && <p className="error-text">{errors.bodyPart}</p>}
             {formData.bodyPart && (
                 <div className="mt-5">
-                    <label className={labelBase}>Specific Area<span className="text-orange-500"> *</span></label>
+                    <label className={labelBase}>Specific Area<span className="text-[#cc751b]"> *</span></label>
                     <div className="flex flex-col gap-2">
                         {bodyPartOptions[formData.bodyPart].map(opt => {
                             const selected = formData.secondaryPart === opt.label;
@@ -401,12 +401,12 @@ function BookingForm() {
         <div className="grid grid-cols-1 gap-6">
             <div className="text-6xl sm:text-8xl md:text-8xl font-extrabold mb-6">
                 Contact <span className="relative inline-block">Details
-                    <span className="absolute -top-2 -right-8 text-xl sm:text-2xl md:text-3xl font-bold text-orange-500">4/4</span>
+                    <span className="absolute -top-2 -right-8 text-xl sm:text-2xl md:text-3xl font-bold text-[#cc751b]">4/4</span>
                 </span>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-6">
                 <div>
-                    <label className={labelBase}>What's your email?<span className="text-orange-500"> *</span></label>
+                    <label className={labelBase}>What's your email?<span className="text-[#cc751b]"> *</span></label>
                     <input
                         className={inputBase}
                         type="email"
@@ -432,7 +432,7 @@ function BookingForm() {
 
             <div className="grid grid-cols-1 gap-6">
                 <div>
-                    <label className={labelBase}>Do you have any skin conditions?<span className="text-orange-500"> *</span></label>
+                    <label className={labelBase}>Do you have any skin conditions?<span className="text-[#cc751b]"> *</span></label>
                     <div className="flex gap-4">
                         {["Yes", "No"].map((opt) => {
                             const sel = formData.skinCondition === opt;
@@ -465,7 +465,7 @@ function BookingForm() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-6">
                 <div>
-                    <label className={labelBase}>Are you pregnant/breastfeeding?<span className="text-orange-500"> *</span></label>
+                    <label className={labelBase}>Are you pregnant/breastfeeding?<span className="text-[#cc751b]"> *</span></label>
                     <div className="flex gap-4">
                         {["Yes", "No"].map((opt) => {
                             const sel = formData.pregnant === opt;
@@ -487,13 +487,13 @@ function BookingForm() {
                 <div>
                     <label className={labelBase}>Do you agree to our <a
                         href="/terms.html"
-                        className="underline text-orange-500 hover:text-orange-600"
+                        className="underline text-[#cc751b] hover:text-orange-600"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
                         terms
                     </a>
-                        ?<span className="text-orange-500"> *</span></label>
+                        ?<span className="text-[#cc751b]"> *</span></label>
                     <div className="flex gap-4">
                         {["Yes", "No"].map((opt) => {
                             const sel = formData.agreeTerms === opt;

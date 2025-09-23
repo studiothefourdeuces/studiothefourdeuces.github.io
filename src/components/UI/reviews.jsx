@@ -56,7 +56,7 @@ const FloatingReviews = () => {
                     <div className="text-6xl sm:text-8xl md:text-8xl font-extrabold">
                         Reviews
                     </div>
-                    <span className="absolute -top-2 -right-6 text-xl sm:text-2xl md:text-3xl font-bold text-orange-500">
+                    <span className="absolute -top-2 -right-6 text-xl sm:text-2xl md:text-3xl font-bold text-[#CC751B]">
                         {reviews.length}
                     </span>
                 </div>
@@ -142,7 +142,7 @@ const FloatingReviews = () => {
                                     href={review.url || "https://g.page/r/CRhrBvXgDpG6EAE/review"}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-orange-500 underline"
+                                    className="text-[#CC751B] underline"
                                 >
                                     Google
                                 </a>

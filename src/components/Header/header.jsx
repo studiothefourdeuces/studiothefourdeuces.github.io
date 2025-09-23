@@ -37,7 +37,7 @@ const Header = () => {
             <a
               key={item.name}
               href={item.href}
-              className="hover:text-orange-500 transition"
+              className="hover:text-[#CC751B] transition"
               onClick={e => handleClick(item.href, e)}
             >
               {item.name}
@@ -65,7 +65,7 @@ const Header = () => {
           <a
             key={item.name}
             href={item.href}
-            className="hover:text-orange-500 transition text-2xl"
+            className="hover:text-[#CC751B] transition text-2xl"
             onClick={e => handleClick(item.href, e)}
           >
             {item.name}

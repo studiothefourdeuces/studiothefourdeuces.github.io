@@ -116,7 +116,7 @@ const Artists = () => {
                     onClick={scrollLeft}
                     className="w-10 h-10 flex items-center justify-center border border-[#3c3c3c] rounded-full hover:border-white transition"
                   >
-                    <img src="/src/assets/images/svg/arrow-right.svg" alt="Previous" className="w-4 h-4" />
+                    <img src="/src/assets/images/svg/arrow-left.svg" alt="Previous" className="w-4 h-4" />
                   </button>
                   <button
                     onClick={scrollRight}

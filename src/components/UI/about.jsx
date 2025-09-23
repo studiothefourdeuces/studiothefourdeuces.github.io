@@ -42,7 +42,7 @@ const About = () => {
                     <div className="text-6xl sm:text-8xl md:text-8xl font-extrabold">
                         Partners
                     </div>
-                    <span className="absolute -top-2 -right-4 text-xl sm:text-2xl md:text-3xl font-bold text-orange-500">
+                    <span className="absolute -top-2 -right-4 text-xl sm:text-2xl md:text-3xl font-bold text-[#CC751B]">
                         3
                     </span>
                 </div>
