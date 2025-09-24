@@ -139,12 +139,16 @@ function Footer() {
 
                 <div className="flex flex-col gap-4 col-span-1 md:col-span-1">
                     <h3 className="text-base md:text-[0.9rem]">[Collaboration]</h3>
-                    <button className={navBtn}>studio@thefourdeuces.nl</button>
+                    <a href="mailto:studio@thefourdeuces.nl" className={navBtn}>
+                        studio@thefourdeuces.nl
+                    </a>
                 </div>
 
                 <div className="flex flex-col gap-4 col-span-1 md:col-span-1">
                     <h3 className="text-base md:text-[0.9rem]">[Booking]</h3>
-                    <button className={navBtn}>booking@thefourdeuces.nl</button>
+                    <a href="mailto:booking@thefourdeuces.nl" className={navBtn}>
+                        booking@thefourdeuces.nl
+                    </a>
                 </div>
             </div>
 
