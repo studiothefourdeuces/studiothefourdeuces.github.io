@@ -162,7 +162,7 @@ function Footer() {
                 <div className="hidden sm:block text-xs">•</div>
                 <div className="text-xs flex items-center gap-1">
                     Designed & crafted by{" "}
-                    <a className={navBtn} href="https://aerdt.xyz/" target="_blank" rel="noopener noreferrer">
+                    <a className='{navBtn} text-xs' href="https://aerdt.xyz/" target="_blank" rel="noopener noreferrer">
                         Artem Erdt
                     </a>
                 </div>
