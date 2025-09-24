@@ -6,9 +6,8 @@
   <title>Terms and Conditions | The Four Deuces</title>
   <meta name="description" content="Read the terms and conditions for services and appointments at The Four Deuces Tattoo Studio. Understand our policies before your visit.">
 
-
   <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
 
   <!-- React and ReactDOM -->
   <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
@@ -25,47 +24,40 @@
 
   <!-- Remix Icons -->
   <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
-
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Terms and Conditions",
-  "url": "https://thefourdeuces.nl/terms",
-  "description": "Read the terms and conditions for services and appointments at The Four Deuces Tattoo Studio. Understand our policies before your visit."
-}
-</script>
-
 </head>
 <body class="bg-gray-50">
 
-  <!-- Header -->
-  <div id="header-root"></div>
+  <div id="root"></div>
 
-  <!-- Terms content -->
-  <div id="terms-root" class="mt-20"></div>
-
-  <!-- Load Header -->
+  <!-- Load Components -->
   <script type="text/babel" src="./src/components/Header/header.jsx"></script>
-
-  <!-- Load Terms page -->
   <script type="text/babel" src="./src/pages/terms.jsx"></script>
 
   <script type="text/babel">
-    const { StrictMode } = React;
+    const { useState, StrictMode } = React;
     const { createRoot } = ReactDOM;
 
-    // Render Header
-    createRoot(document.getElementById("header-root")).render(
-      <StrictMode>
-        <Header />
-      </StrictMode>
-    );
+    function TermsPage() {
+      const [open, setOpen] = useState(false);
+      const Header = window.Header;
+      const TermsSlider = window.TermsSlider;
 
-    // Render Terms
-    createRoot(document.getElementById("terms-root")).render(
+      return (
+        <div className="relative overflow-x-hidden">
+          {/* Header + Sidebar */}
+          <Header open={open} setOpen={setOpen} />
+
+          {/* Page Content */}
+          <div className={`transition-transform duration-500 ease-in-out transform ${open ? "translate-x-[80%]" : "translate-x-0"}`}>
+            <TermsSlider />
+          </div>
+        </div>
+      );
+    }
+
+    createRoot(document.getElementById("root")).render(
       <StrictMode>
-        <Terms />
+        <TermsPage />
       </StrictMode>
     );
   </script>

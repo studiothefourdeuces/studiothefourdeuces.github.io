@@ -1,72 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Booking Form | The Four Deuces</title>
-    <meta name="description" content="Book your tattoo appointment online at The Four Deuces. Share your ideas, upload reference images, and get personalized guidance from our talented tattoo artists.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Booking Form | The Four Deuces</title>
+  <meta name="description" content="Book your tattoo appointment online at The Four Deuces. Share your ideas, upload reference images, and get personalized guidance from our talented tattoo artists.">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
 
-    <!-- React and ReactDOM -->
-    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <!-- React and ReactDOM -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
 
-    <!-- Babel -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <!-- Babel -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="./styles.css" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./styles.css" />
 
-    <!-- Remix Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
-    
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Book Your Tattoo Appointment",
-  "url": "https://thefourdeuces.nl/book",
-  "description": "Book your tattoo appointment online at The Four Deuces. Share your ideas, upload reference images, and get personalized guidance from our talented tattoo artists."
-}
-</script>
-
+  <!-- Remix Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
 </head>
 <body class="bg-gray-50">
 
-    <!-- Header -->
-    <div id="header-root"></div>
+  <div id="root"></div>
 
-    <!-- Booking Form -->
-    <div id="book-root" class="mt-20"></div>
+  <!-- Load Components -->
+  <script type="text/babel" src="./src/components/Header/header.jsx"></script>
+  <script type="text/babel" src="./src/pages/booking.jsx"></script>
 
-    <!-- Load Header -->
-    <script type="text/babel" src="./src/components/Header/header.jsx"></script>
+  <script type="text/babel">
+    const { useState, StrictMode } = React;
+    const { createRoot } = ReactDOM;
 
-    <!-- Load Booking Form -->
-    <script type="text/babel" src="./src/pages/booking.jsx"></script>
+    function BookingPage() {
+      const [open, setOpen] = useState(false);
+      const Header = window.Header;
+      const BookingForm = window.BookingForm;
 
-    <script type="text/babel">
-        const { StrictMode } = React;
-        const { createRoot } = ReactDOM;
+      return (
+        <div className="relative overflow-x-hidden">
+          {/* Header + Sidebar */}
+          <Header open={open} setOpen={setOpen} />
 
-        // Render Header
-        createRoot(document.getElementById("header-root")).render(
-            <StrictMode>
-                <Header />
-            </StrictMode>
-        );
+          {/* Page Content */}
+          <div className={`transition-transform duration-500 ease-in-out transform ${open ? "translate-x-[80%]" : "translate-x-0"}`}>
+            <BookingForm />
+          </div>
+        </div>
+      );
+    }
 
-        // Render Booking Form
-        createRoot(document.getElementById("book-root")).render(
-            <StrictMode>
-                <BookingForm />
-            </StrictMode>
-        );
-    </script>
+    createRoot(document.getElementById("root")).render(
+      <StrictMode>
+        <BookingPage />
+      </StrictMode>
+    );
+  </script>
 </body>
 </html>
