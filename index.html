@@ -2,66 +2,83 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Four Deuces | Tattoo Studio & Art Space</title>
-    <meta name="description" content="Welcome to The Four Deuces Tattoo Studio. Discover custom tattoos crafted with passion, from realistic styles to creative designs. Book your appointment online today.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Four Deuces - Tattoo Studio & Artspace</title>
+  <meta name="description"
+    content="Welcome to The Four Deuces Tattoo Studio. Discover custom tattoos crafted with passion, from realistic styles to creative designs. Book your appointment online today.">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
 
-    <!-- React and ReactDOM -->
-    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <!-- React and ReactDOM -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
 
-    <!-- Babel -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <!-- Babel -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="./styles.css" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./styles.css" />
 
-    <!-- Remix Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+  <!-- Remix Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
 
-    <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "The Four Deuces",
-    "url": "https://thefourdeuces.nl",
-    "logo": "https://thefourdeuces.nl/src/assets/images/logo-tfd.png",
-    "sameAs": [
-      "https://www.instagram.com/the.four.deuces"
-    ],
-    "description": "Welcome to our sanctuary for tattoos and creativity. Book your next tattoo online."
-  }
-  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "The Four Deuces",
+      "url": "https://thefourdeuces.nl",
+      "logo": "https://thefourdeuces.nl/src/assets/images/logo-tfd.png",
+      "sameAs": [
+        "https://www.instagram.com/the.four.deuces"
+      ],
+      "description": "Welcome to our sanctuary for tattoos and creativity. Book your next tattoo online."
+    },
+    {
+      "@type": "WebSite",
+      "url": "https://thefourdeuces.nl",
+      "name": "The Four Deuces",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://thefourdeuces.nl/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  ]
+}
+</script>
+
 </head>
 
 <body class="bg-gray-50">
-    <div id="root"></div>
+  <div id="root"></div>
 
-    <!-- Framer Motion -->
-    <script src="https://cdn.jsdelivr.net/npm/framer-motion@10.16.4/dist/framer-motion.umd.min.js"></script>
-    <script>
-        window.motion = window.FramerMotion.motion;
-    </script>
+  <!-- Framer Motion -->
+  <script src="https://cdn.jsdelivr.net/npm/framer-motion@10.16.4/dist/framer-motion.umd.min.js"></script>
+  <script>
+    window.motion = window.FramerMotion.motion;
+  </script>
 
-    <!-- JSX Components -->
-    <script type="text/babel" src="./src/components/Header/header.jsx"></script>
-    <script type="text/babel" src="./src/components/UI/hero.jsx"></script>
-    <script type="text/babel" src="./src/components/UI/about.jsx"></script>
-    <script type="text/babel" src="./src/components/UI/artists.jsx"></script>
-    <script type="text/babel" src="./src/components/UI/form.jsx"></script> <!-- teaser version -->
-    <script type="text/babel" src="./src/components/UI/reviews.jsx"></script>
-    <script type="text/babel" src="./src/components/Footer/footer.jsx"></script>
-    <script type="text/babel" src="./main.jsx"></script>
+  <!-- JSX Components -->
+  <script type="text/babel" src="./src/components/Header/header.jsx"></script>
+  <script type="text/babel" src="./src/components/UI/hero.jsx"></script>
+  <script type="text/babel" src="./src/components/UI/about.jsx"></script>
+  <script type="text/babel" src="./src/components/UI/artists.jsx"></script>
+  <script type="text/babel" src="./src/components/UI/form.jsx"></script> <!-- teaser version -->
+  <script type="text/babel" src="./src/components/UI/reviews.jsx"></script>
+  <script type="text/babel" src="./src/components/Footer/footer.jsx"></script>
+  <script type="text/babel" src="./main.jsx"></script>
 
-    <!-- Google Maps (for footer) -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCw4ErXhC0C4CyoBgejvSvP6IzbJVlt6Yk" async defer></script>
+  <!-- Google Maps (for footer) -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCw4ErXhC0C4CyoBgejvSvP6IzbJVlt6Yk" async
+    defer></script>
 </body>
 
 </html>

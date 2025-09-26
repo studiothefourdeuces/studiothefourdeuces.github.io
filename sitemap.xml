@@ -12,7 +12,7 @@
     <image:image>
       <image:loc>https://thefourdeuces.nl/assets/images/hero.jpg</image:loc>
       <image:caption>Welcome to our sanctuary of art and self-expression. Discover custom tattoos crafted with passion at The Four Deuces.</image:caption>
-      <image:title>Four Deuces Tattoo Studio</image:title>
+      <image:title>The Four Deuces Tattoo Studio</image:title>
     </image:image>
   </url>
 
@@ -25,7 +25,7 @@
     <image:image>
       <image:loc>https://thefourdeuces.nl/assets/images/form-preview.jpg</image:loc>
       <image:caption>Book your tattoo appointment online. Share your ideas and get personalized guidance from our talented artists.</image:caption>
-      <image:title>Book Tattoo</image:title>
+      <image:title>Book an Experience</image:title>
     </image:image>
   </url>
 
