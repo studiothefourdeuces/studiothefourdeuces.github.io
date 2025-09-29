@@ -1,10 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Four Deuces - Book an Experience</title>
-  <meta name="description" content="Book your tattoo appointment online at The Four Deuces. Share your ideas, upload reference images, and get personalized guidance from our talented tattoo artists.">
+  <meta name="description"
+    content="Book your tattoo appointment online at The Four Deuces – Amsterdam’s premier tattoo studio & artspace. Reserve your spot with one of our amazing artists today." />
+
+  <!-- Open Graph (social sharing) -->
+  <meta property="og:title" content="Book a Tattoo at The Four Deuces Amsterdam" />
+  <meta property="og:description"
+    content="Easily book your tattoo appointment online at The Four Deuces, Amsterdam. Choose your artist and secure your spot now." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://thefourdeuces.nl/book.html" />
+  <meta property="og:image" content="https://thefourdeuces.nl/src/assets/images/logo-tfd.png" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TattooParlor",
+    "name": "The Four Deuces",
+    "url": "https://thefourdeuces.nl/book.html",
+    "description": "Online booking page for The Four Deuces – Amsterdam’s tattoo studio & artspace.",
+    "potentialAction": {
+      "@type": "ReserveAction",
+      "target": "https://thefourdeuces.nl/book.html",
+      "result": {
+        "@type": "Reservation",
+        "name": "Tattoo Appointment"
+      }
+    }
+  }
+  </script>
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
@@ -25,6 +54,7 @@
   <!-- Remix Icons -->
   <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
 </head>
+
 <body class="bg-gray-50">
 
   <div id="root"></div>
@@ -62,4 +92,5 @@
     );
   </script>
 </body>
+
 </html>
