@@ -11,6 +11,12 @@ const About = () => {
         "/src/assets/images/partner3.png",
     ];
 
+    const partnerLinks = [
+        "https://www.tattooland.com/",
+        "http://killerinktattoo.nl/",
+        "https://www.dashatattoo.com/",
+    ];
+
     // IntersectionObserver to trigger scroll-in animation
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -33,9 +39,8 @@ const About = () => {
         >
             {/* Section Title & Intro */}
             <div
-                className={`flex flex-col items-end mb-6 gap-4 transition-all duration-700 ease-out transform ${
-                    visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                }`}
+                className={`flex flex-col items-end mb-6 gap-4 transition-all duration-700 ease-out transform ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                    }`}
                 style={{ transitionDelay: "0s" }}
             >
                 <div className="relative text-right">
@@ -56,15 +61,17 @@ const About = () => {
 
             {/* Partner images */}
             <div
-                className={`grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 transition-all duration-700 ease-out transform ${
-                    visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                }`}
+                className={`grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 transition-all duration-700 ease-out transform ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                    }`}
                 style={{ transitionDelay: "0.2s" }}
             >
                 {partnerImages.map((src, index) => (
-                    <div
+                    <a
                         key={index}
-                        className={`transition-transform duration-300 ease-in-out cursor-pointer`}
+                        href={partnerLinks[index]}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="transition-transform duration-300 ease-in-out cursor-pointer block"
                         onMouseEnter={() => setActiveImage(index)}
                         onMouseLeave={() => setActiveImage(0)}
                     >
@@ -73,7 +80,7 @@ const About = () => {
                             alt={`Partner ${index + 1}`}
                             className="w-full h-auto object-contain max-h-[120px] opacity-60 hover:opacity-100 hover:scale-105 transition-all duration-600 ease-in-out"
                         />
-                    </div>
+                    </a>
                 ))}
             </div>
         </div>
