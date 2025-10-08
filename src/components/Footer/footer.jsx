@@ -88,9 +88,9 @@ function Footer() {
             >
                 <div className="flex flex-col gap-4">
                     <h3 className="text-base md:text-[0.9rem]">[Clients]</h3>
-                    <button className={navBtn}>Artists</button>
-                    <button className={navBtn}>Aftercare</button>
-                    <button className={navBtn}>Preparation</button>
+                    <a href="/guests.html" className={navBtn}>Artists</a>
+                    <a href="/guests.html" className={navBtn}>Aftercare</a>
+                    <a href="/guests.html" className={navBtn}>Preparation</a>
                 </div>
 
                 <div className="flex flex-col gap-4">
