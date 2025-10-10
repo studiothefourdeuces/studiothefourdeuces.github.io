@@ -21,7 +21,7 @@ const About = () => {
 
     return (
         <div
-            id="about-section"
+            id="about"
             ref={sectionRef}
             className="p-6 md:p-20 flex flex-col md:flex-row justify-between items-stretch gap-16"
         >

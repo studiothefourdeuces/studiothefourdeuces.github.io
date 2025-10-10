@@ -31,7 +31,7 @@ function Preparation() {
   return (
     <section
       ref={sectionRef}
-      id="prep-section"
+      id="preparation"
       className="w-full py-24 p-6 sm:p-6 md:p-20 transition-all duration-1000 ease-out"
     >
       {/* Section Header */}

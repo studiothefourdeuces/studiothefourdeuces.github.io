@@ -34,7 +34,7 @@ function Aftercare() {
   return (
     <section
       ref={sectionRef}
-      id="aftercare-section"
+      id="aftercare"
       className="w-full py-24 p-6 sm:p-6 md:p-20 transition-all duration-1000 ease-out"
     >
       {/* Section Header */}

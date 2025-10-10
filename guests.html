@@ -1,49 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Four Deuces - Guest Artists</title>
-  <meta name="description" content="Learn about our guest tattoo artists, how to prepare for your session, and proper aftercare at The Four Deuces Amsterdam." />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Four Deuces - Guest Artists</title>
+    <meta name="description"
+        content="Learn about our guest tattoo artists, how to prepare for your session, and proper aftercare at The Four Deuces Amsterdam." />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Guest Artists | The Four Deuces Amsterdam" />
-  <meta property="og:description" content="Discover our guest tattoo artists, preparation, and aftercare guidelines." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://thefourdeuces.nl/guests.html" />
-  <meta property="og:image" content="https://thefourdeuces.nl/src/assets/images/logo-tfd.png" />
+    <!-- Open Graph -->
+    <meta property="og:title" content="Guest Artists | The Four Deuces Amsterdam" />
+    <meta property="og:description"
+        content="Discover our guest tattoo artists, preparation, and aftercare guidelines." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://thefourdeuces.nl/guests.html" />
+    <meta property="og:image" content="https://thefourdeuces.nl/src/assets/images/logo-tfd.png" />
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
 
-  <!-- React, ReactDOM, Babel -->
-  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- React, ReactDOM, Babel -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="./styles.css" />
+    <!-- Styles -->
+    <link rel="stylesheet" href="./styles.css" />
 
-  <!-- Remix Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet" />
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet" />
 </head>
 
 <body class="overflow-x-hidden">
-  <div id="root"></div>
+    <div id="root"></div>
 
-  <!-- Shared Components -->
-  <script type="text/babel" src="./src/components/Header/header.jsx"></script>
-  <script type="text/babel" src="./src/components/Footer/footer.jsx"></script>
+    <!-- Shared Components -->
+    <script type="text/babel" src="./src/components/Header/header.jsx"></script>
+    <script type="text/babel" src="./src/components/Footer/footer.jsx"></script>
 
-  <!-- Page Sections -->
-  <script type="text/babel" src="./src/pages/Guests/preparation.jsx"></script>
-  <script type="text/babel" src="./src/pages/Guests/aftercare.jsx"></script>
-  <script type="text/babel" src="./src/components/UI/artists.jsx"></script>
+    <!-- Page Sections -->
+    <script type="text/babel" src="./src/pages/Guests/intro.jsx"></script>
+      <script type="text/babel" src="./src/pages/Guests/gallery.jsx"></script>
+    <script type="text/babel" src="./src/pages/Guests/preparation.jsx"></script>
+    <script type="text/babel" src="./src/pages/Guests/aftercare.jsx"></script>
+    <script type="text/babel" src="./src/components/UI/artists.jsx"></script>
 
-  <!-- Page Mount -->
-  <script type="text/babel" src="./src/pages/guests.jsx"></script>
+    <!-- Page Mount -->
+    <script type="text/babel" src="./src/pages/guests.jsx"></script>
 </body>
+
 </html>

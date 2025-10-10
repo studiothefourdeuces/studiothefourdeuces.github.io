@@ -1,28 +1,56 @@
 const { useState } = React;
 
 const Header = ({ open, setOpen }) => {
-  const menuItems = [
-    { name: "Home", href: "#home" },
-    { name: "Our Partners", href: "#partners" },
-    { name: "Team of Artists", href: "#artists" },
-    { name: "Customer Reviews", href: "#reviews" },
+  const path = window.location.pathname;
+
+  // Dynamic menu items depending on current page
+  let menuItems = [
+    { name: "Home", href: "index.html" }, // Always include Home
   ];
+
+  if (path.includes("guests")) {
+    menuItems.push(
+      { name: "Gallery", href: "#gallery" },
+      { name: "Preparation", href: "#preparation" },
+      { name: "Aftercare", href: "#aftercare" },
+      { name: "Artists", href: "#artists" }
+    );
+  } else if (path.includes("artists")) {
+    menuItems.push(
+      { name: "Facilities", href: "#facilities" },
+      { name: "Rules", href: "#rules" },
+      { name: "Career", href: "#career" }
+    );
+  } else {
+    // Default (index.html)
+    menuItems.push(
+      { name: "Our Partners", href: "#partners" },
+      { name: "Team of Artists", href: "#artists" },
+      { name: "Customer Reviews", href: "#reviews" }
+    );
+  }
 
   const ctaBtn =
     "px-5 py-3 rounded-xs border border-[#3c3c3c] bg-transparent text-base md:text-[0.9rem] font-thin uppercase transition hover:border-[#ffffff] hover:text-[#ffffff]";
 
-  const isIndex =
-    window.location.pathname.endsWith("index.html") ||
-    window.location.pathname === "/";
-
   const handleClick = (href, e) => {
     e.preventDefault();
-    if (isIndex) {
-      const el = document.querySelector(href);
-      if (el) el.scrollIntoView({ behavior: "smooth" });
+
+    // If Home button → navigate to index.html
+    if (href === "index.html") {
+      window.location.href = "index.html";
+      return;
+    }
+
+    // Smooth scroll for in-page sections
+    const el = document.querySelector(href);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
     } else {
+      // If section not on this page → go to main page and scroll there
       window.location.href = `index.html${href}`;
     }
+
     setOpen(false);
   };
 
@@ -30,8 +58,9 @@ const Header = ({ open, setOpen }) => {
     <>
       {/* Sidebar Menu */}
       <div
-        className={`fixed top-0 left-0 h-full w-[80%] bg-[#111111] flex flex-col justify-center items-start p-8 z-40 transition-transform duration-500 ease-in-out ${open ? "translate-x-0" : "-translate-x-full"
-          }`}
+        className={`fixed top-0 left-0 h-full w-[80%] bg-[#111111] flex flex-col justify-center items-start p-8 z-40 transition-transform duration-500 ease-in-out ${
+          open ? "translate-x-0" : "-translate-x-full"
+        }`}
       >
         <div className="flex flex-col gap-8 w-full">
           {/* Menu Links */}
@@ -39,8 +68,7 @@ const Header = ({ open, setOpen }) => {
             <a
               key={item.name}
               href={item.href}
-              className={`text-xl transition hover:text-[#CC751B] ${item.name === "Home" ? "text-[#CC751B]" : ""
-                }`}
+              className="text-xl transition hover:text-[#CC751B]"
               onClick={(e) => handleClick(item.href, e)}
             >
               {item.name}
@@ -74,9 +102,8 @@ const Header = ({ open, setOpen }) => {
           </div>
         </div>
 
+        {/* Social Links */}
         <div className="flex flex-col gap-8 w-full">
-
-          {/* Social Links */}
           <div className="flex gap-4 mt-8 text-xl">
             <a
               href="mailto:studio@thefourdeuces.nl"
