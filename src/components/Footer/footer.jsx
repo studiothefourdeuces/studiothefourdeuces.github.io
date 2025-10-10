@@ -95,9 +95,9 @@ function Footer() {
 
                 <div className="flex flex-col gap-4">
                     <h3 className="text-base md:text-[0.9rem]">[Artists]</h3>
-                    <button className={navBtn}>Residents</button>
-                    <button className={navBtn}>Guests</button>
-                    <button className={navBtn}>Facilities</button>
+                    <a href="/404.html" className={navBtn}>Residents</a>
+                    <a href="/404.html" className={navBtn}>Guests</a>
+                    <a href="/404.html" className={navBtn}>Facilities</a>
                 </div>
 
                 <div className="flex flex-col gap-4 col-span-2 md:col-span-1">
@@ -108,7 +108,7 @@ function Footer() {
                     >
                         Terms and Conditions
                     </a>
-                    <button className={navBtn}>FAQ</button>
+                    <a href="/404.html" className={navBtn}>FAQ</a>
                 </div>
             </div>
 
