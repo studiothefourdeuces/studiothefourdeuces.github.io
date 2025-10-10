@@ -3,7 +3,7 @@ const { useState } = React;
 const Header = ({ open, setOpen }) => {
   const menuItems = [
     { name: "Home", href: "#home" },
-    { name: "Our Partners", href: "#about" },
+    { name: "Our Partners", href: "#partners" },
     { name: "Team of Artists", href: "#artists" },
     { name: "Customer Reviews", href: "#reviews" },
   ];

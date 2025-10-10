@@ -1,6 +1,6 @@
 const { useRef, useState, useEffect } = React;
 
-const FloatingReviews = () => {
+const Reviews = () => {
     const reviewsRef = useRef(null);
     const scrollRef = useRef(null);
     const [visible, setVisible] = useState(false);
@@ -155,4 +155,4 @@ const FloatingReviews = () => {
     );
 };
 
-window.FloatingReviews = FloatingReviews;
+window.Reviews = Reviews;

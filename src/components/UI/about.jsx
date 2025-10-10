@@ -1,23 +1,12 @@
 const { useState, useEffect, useRef } = React;
 
+const ctaBtn =
+    "px-5 py-3 rounded-xs border border-[#3c3c3c] bg-transparent text-base md:text-[0.9rem] font-thin uppercase transition hover:border-[#ffffff] hover:text-[#ffffff]";
+
 const About = () => {
-    const [activeImage, setActiveImage] = useState(0);
     const sectionRef = useRef(null);
     const [visible, setVisible] = useState(false);
 
-    const partnerImages = [
-        "/src/assets/images/partner1.png",
-        "/src/assets/images/partner2.png",
-        "/src/assets/images/partner3.png",
-    ];
-
-    const partnerLinks = [
-        "https://www.tattooland.com/",
-        "http://killerinktattoo.nl/",
-        "https://www.dashatattoo.com/",
-    ];
-
-    // IntersectionObserver to trigger scroll-in animation
     useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => {
@@ -27,61 +16,85 @@ const About = () => {
         );
 
         if (sectionRef.current) observer.observe(sectionRef.current);
-
         return () => observer.disconnect();
     }, []);
 
     return (
         <div
-            id="about"
+            id="about-section"
             ref={sectionRef}
-            className="about-panels p-6 md:p-20 text-base md:text-[0.9rem] font-light"
+            className="p-6 md:p-20 flex flex-col md:flex-row justify-between items-stretch gap-16"
         >
-            {/* Section Title & Intro */}
+            {/* JOIN US SECTION */}
             <div
-                className={`flex flex-col items-end mb-6 gap-4 transition-all duration-700 ease-out transform ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                className={`flex-1 transition-all duration-700 ease-out transform ${visible
+                        ? "opacity-100 translate-y-0"
+                        : "opacity-0 translate-y-10"
                     }`}
-                style={{ transitionDelay: "0s" }}
             >
-                <div className="relative text-right">
-                    <div className="text-6xl sm:text-8xl md:text-8xl font-extrabold">
-                        Partners
-                    </div>
-                    <span className="absolute -top-2 -right-4 text-xl sm:text-2xl md:text-3xl font-bold text-[#CC751B]">
-                        3
-                    </span>
+                <div className="text-6xl sm:text-7xl md:text-8xl font-extrabold mb-6 text-left">
+                    Join Our Team
                 </div>
-                <div className="text-base md:text-[0.9rem] font-thin md:w-1/3 text-right">
-                    <h3 className="text-[#f0efed]/[0.4]">[Our Partners]</h3>
-                    <p>
-                        We collaborate with the industry’s top suppliers to ensure every product we create meets the highest standards.
+
+                <div className="mb-8 text-left gap-6 max-w-lg">
+                    <h3 className="text-[#f0efed]/[0.4] font-thin">
+                        [Our Collective]
+                    </h3>
+                    <p className="text-base md:text-[0.9rem] font-thin leading-relaxed">
+                        Become part of our creative community. Collaborate and grow and be inspired
+                        by those who share your passion for creativity and craftsmanship.
                     </p>
+                </div>
+
+                <div className="flex gap-4 flex-wrap mt-6">
+                    <a
+                        href="mailto:studio@thefourdeuces.nl"
+                        className={`${ctaBtn} relative pr-8 group overflow-hidden`}
+                    >
+                        Join Now
+                        <img
+                            src="/src/assets/images/svg/arrow-top.svg"
+                            alt="arrow"
+                            className="absolute top-1 right-1 w-4 h-4 duration-300 opacity-60 group-hover:opacity-100"
+                        />
+                    </a>
                 </div>
             </div>
 
-            {/* Partner images */}
+            {/* REQUEST A TATTOO SECTION */}
             <div
-                className={`grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 transition-all duration-700 ease-out transform ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                className={`flex-1 transition-all duration-700 ease-out transform ${visible
+                        ? "opacity-100 translate-y-0"
+                        : "opacity-0 translate-y-10"
                     }`}
-                style={{ transitionDelay: "0.2s" }}
             >
-                {partnerImages.map((src, index) => (
+                <div className="text-6xl sm:text-7xl md:text-8xl font-extrabold mb-6 text-right text-[#CC751B]">
+                    Request A Tattoo
+                </div>
+
+                <div className="mb-8 text-right max-w-lg gap-6 md:ml-auto">
+                    <h3 className="text-[#f0efed]/[0.4] font-thin">
+                        [Write Your Story]
+                    </h3>
+                    <p className="text-base md:text-[0.9rem] font-thin leading-relaxed">
+                        Every tattoo tells a story. Work directly with our artists to design a piece
+                        that captures who you are and what you stand for. We like all your ideas!
+                    </p>
+                </div>
+
+                <div className="flex gap-4 flex-wrap justify-end mt-6">
                     <a
-                        key={index}
-                        href={partnerLinks[index]}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="transition-transform duration-300 ease-in-out cursor-pointer block"
-                        onMouseEnter={() => setActiveImage(index)}
-                        onMouseLeave={() => setActiveImage(0)}
+                        href="/book.html"
+                        className={`${ctaBtn} relative pr-8 group overflow-hidden`}
                     >
+                        Book Experience
                         <img
-                            src={src}
-                            alt={`Partner ${index + 1}`}
-                            className="w-full h-auto object-contain max-h-[120px] opacity-60 hover:opacity-100 hover:scale-105 transition-all duration-600 ease-in-out"
+                            src="/src/assets/images/svg/arrow-top.svg"
+                            alt="arrow"
+                            className="absolute top-1 right-1 w-4 h-4 duration-300 opacity-60 group-hover:opacity-100"
                         />
                     </a>
-                ))}
+                </div>
             </div>
         </div>
     );

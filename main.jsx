@@ -28,16 +28,16 @@ function App() {
           <Hero />
 
           {/* About Section */}
-          <About />
+          <Partners />
 
           {/* Artists Section */}
           <ArtistSection />
 
-          {/* Booking teaser */}
-          <Form />
+          {/* Join Section */}
+          <About />
 
           {/* Floating Reviews */}
-          <FloatingReviews />
+          <Reviews />
 
           {/* Footer */}
           <Footer />
