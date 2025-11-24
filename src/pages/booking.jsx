@@ -1,5 +1,33 @@
 const { useState, useRef, useEffect } = React;
 
+function StepOneWidget() {
+    const containerRef = useRef(null);
+
+    useEffect(() => {
+        // Inject script only once
+        if (!document.getElementById("elfsight-script")) {
+            const script = document.createElement("script");
+            script.src = "https://elfsightcdn.com/platform.js";
+            script.async = true;
+            script.id = "elfsight-script";
+            document.body.appendChild(script);
+        }
+
+        // Inject widget only once
+        if (
+            containerRef.current &&
+            !containerRef.current.querySelector(".elfsight-app-ea2d0882-3bf6-4fe8-bc3c-cb350a4c1964")
+        ) {
+            const widget = document.createElement("div");
+            widget.className = "elfsight-app-ea2d0882-3bf6-4fe8-bc3c-cb350a4c1964";
+            widget.setAttribute("data-elfsight-app-lazy", "");
+            containerRef.current.appendChild(widget);
+        }
+    }, []);
+
+    return <div ref={containerRef} className="mb-6" />;
+}
+
 function BookingForm() {
     const [step, setStep] = useState(1);
     const [visible, setVisible] = useState(false);
@@ -264,6 +292,12 @@ function BookingForm() {
                     <span className="absolute -top-2 -right-8 text-xl sm:text-2xl md:text-3xl font-bold text-[#CC751B]">1/4</span>
                 </span>
             </div>
+
+            <StepOneWidget />
+            <p className="mb-4 opacity-60">
+                We highly recommend reviewing our artists’ work to choose the perfect tattoo for you.
+            </p>
+
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                     <label className={labelBase}>What's your full name?<span className="text-[#CC751B]"> *</span></label>
@@ -542,13 +576,14 @@ function BookingForm() {
                     <p className={labelBase}>
                         Your tattoo request was submitted successfully.<br />
                         Our team will contact you shortly.
+                        In the meantime read the preparation guide.
                     </p>
 
                     {/* Back to Main Page Button */}
-                    <div className="justify-center mt-6">
+                    <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-6">
                         <a
                             href="index.html"
-                            className={`${backBtn} relative pr-8 group overflow-hidden`}
+                            className={`${backBtn} relative pr-8 group overflow-hidden w-full sm:w-auto text-center`}
                             onClick={e => setOpen && setOpen(false)}
                         >
                             Back to Main
@@ -558,7 +593,20 @@ function BookingForm() {
                                 className="absolute top-1 right-1 w-4 h-4 duration-300 opacity-60 group-hover:opacity-100"
                             />
                         </a>
+
+                        <a
+                            href="guide.html"
+                            className={`${backBtn} relative pr-8 group overflow-hidden w-full sm:w-auto text-center`}
+                        >
+                            Read Guide
+                            <img
+                                src="/src/assets/images/svg/arrow-top.svg"
+                                alt="arrow"
+                                className="absolute top-1 right-1 w-4 h-4 duration-300 opacity-60 group-hover:opacity-100"
+                            />
+                        </a>
                     </div>
+
                 </div>
             );
         }

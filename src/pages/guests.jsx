@@ -8,6 +8,7 @@ const Aftercare = window.Aftercare;
 const Artists = window.Artists;
 
 function GuestsPage() {
+
     const [open, setOpen] = useState(false);
 
     return (
